@@ -1,0 +1,3524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KasOS Documentation - Cyberpunk Desktop Environment</title>
+    <meta name="description" content="Complete documentation for KasOS - A modern web-based desktop environment with cryptocurrency integration, security features, and extensible application support.">
+    <meta name="keywords" content="KasOS, desktop environment, cyberpunk, cryptocurrency, Kaspa, web desktop, documentation">
+    <meta name="author" content="KasOS Team">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="KasOS Documentation">
+    <meta property="og:description" content="Complete documentation for KasOS - A modern cyberpunk desktop environment">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://docs.kasos.io/logo.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KasOS Documentation">
+    <meta name="twitter:description" content="Complete documentation for KasOS - A modern cyberpunk desktop environment">
+    <meta name="twitter:image" content="https://docs.kasos.io/logo.jpg">
+    
+    <!-- Custom styles for enhanced documentation -->
+    <style>
+        /* Cyberpunk-styled checkboxes for quick start checklist */
+        input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #00ff88;
+            border-radius: 3px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+            margin-right: 8px;
+            vertical-align: middle;
+            transition: all 0.3s ease;
+        }
+        
+        input[type="checkbox"]:hover {
+            box-shadow: 0 0 8px #00ff88;
+        }
+        
+        input[type="checkbox"]:checked {
+            background: linear-gradient(135deg, #00ff88, #00fff7);
+            border-color: #00fff7;
+        }
+        
+        input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: #000;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        label {
+            color: #e0e0e0;
+            cursor: pointer;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        label:hover {
+            color: #00fff7;
+        }
+        
+        /* Enhanced code block styling */
+        pre code {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Keyboard shortcut styling */
+        kbd {
+            background: #2d1b69;
+            border: 1px solid #ff00cc;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9em;
+            color: #ff00cc;
+            box-shadow: 0 0 4px #ff00cc33;
+        }
+    </style>
+</head>
+<body>
+    <div class="documentation-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="logo.jpg" alt="KasOS Logo" style="display:block;margin:0 auto 1rem auto;max-width:120px;width:80%;border-radius:16px;box-shadow:0 2px 8px #0002;">
+                <h1>KasOS Docs</h1>
+            </div>
+            <ul class="nav-items">
+                <!-- Quick Start -->
+                <li><a href="#introduction">🚀 Introduction</a></li>
+                <li><a href="#getting-started">⚡ Getting Started</a></li>
+                
+                <!-- User Guide -->
+                <li>
+                    <h3>👤 User Guide</h3>
+                    <ul>
+                        <li><a href="#desktop-environment">🖥️ Desktop Environment</a></li>
+                        <li><a href="#window-management">🪟 Window Management</a></li>
+                        <li><a href="#application-system">📱 Application System</a></li>
+                        <li><a href="#keyboard-shortcuts">⌨️ Keyboard Shortcuts</a></li>
+                        <li><a href="#customization">🎨 Customization</a></li>
+                        <li><a href="#troubleshooting">🔧 Troubleshooting</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Built-in Applications -->
+                <li>
+                    <h3>📦 Built-in Applications</h3>
+                    <ul>
+                        <li><a href="#text-editor">📝 Text Editor</a></li>
+                        <li><a href="#dev-tools">🛠️ Dev Tools</a></li>
+                        <li><a href="#terminal">💻 Terminal</a></li>
+                        <li><a href="#file-manager">📁 File Manager</a></li>
+                        <li><a href="#kaswallet">💰 KasWallet</a></li>
+                        <li><a href="#kasia-messenger">💬 Kasia Messenger</a></li>
+                        <li><a href="#settings">⚙️ Settings</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Development -->
+                <li>
+                    <h3>💻 Development</h3>
+                    <ul>
+                        <li><a href="#app-development">🏗️ App Development</a></li>
+                        <li><a href="#api-reference">📚 API Reference</a></li>
+                        <li><a href="#advanced-development">🚀 Advanced Development</a></li>
+                        <li><a href="#testing-debugging">🧪 Testing & Debugging</a></li>
+                        <li><a href="#deployment">🚀 Deployment</a></li>
+                        <li><a href="#security">🔒 Security Features</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Technical Reference -->
+                <li>
+                    <h3>⚙️ Technical Reference</h3>
+                    <ul>
+                        <li><a href="#architecture">🏛️ Architecture</a></li>
+                        <li><a href="#crypto-integration">₿ Crypto Integration</a></li>
+                        <li><a href="#wasm-sandbox">🛡️ WASM Sandbox</a></li>
+                        <li><a href="#ai-integration">🤖 AI Integration</a></li>
+                        <li><a href="#performance">⚡ Performance Overview</a></li>
+                        <li><a href="#performance-memory">🧠 Memory Management</a></li>
+                        <li><a href="#performance-rendering">🎨 Rendering Optimization</a></li>
+                        <li><a href="#performance-js">⚡ JavaScript Optimization</a></li>
+                        <li><a href="#performance-monitoring">📊 Performance Monitoring</a></li>
+                        <li><a href="#performance-network">🌐 Network & Caching</a></li>
+                        <li><a href="#error-handling">🚨 Error Handling</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Maintenance & Updates -->
+                <li>
+                    <h3>🛠️ Maintenance & Updates</h3>
+                    <ul>
+                        <li><a href="#maintenance-guide">🔧 Maintenance Guide</a></li>
+                        <li><a href="#update-procedures">📋 Update Procedures</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Community & Support -->
+                <li>
+                    <h3>🤝 Community & Support</h3>
+                    <ul>
+                        <li><a href="#contributing">🤝 Contributing</a></li>
+                        <li><a href="#versions-releases">📋 Versions & Releases</a></li>
+                        <li><a href="#support-faq">❓ Support & FAQ</a></li>
+                        <li><a href="#changelog">📝 Changelog</a></li>
+                        <li><a href="#roadmap">🗺️ Roadmap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Quick Reference -->
+                <li>
+                    <h3>📚 Quick Reference</h3>
+                    <ul>
+                        <li><a href="#quick-start-checklist">✅ Quick Start Checklist</a></li>
+                        <li><a href="#common-tasks">🎯 Common Tasks</a></li>
+                        <li><a href="#code-templates">📄 Code Templates</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <main class="content">
+            <!-- Quick Navigation TOC -->
+            <div id="quick-toc" style="background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 8px; padding: 1rem; margin-bottom: 2rem; display: none;">
+                <h3 style="margin-top: 0; color: #00ff88;">📑 Quick Navigation</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; font-size: 0.9rem;">
+                    <a href="#introduction" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">🚀 Introduction</a>
+                    <a href="#getting-started" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">⚡ Getting Started</a>
+                    <a href="#desktop-environment" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">🖥️ Desktop</a>
+                    <a href="#keyboard-shortcuts" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">⌨️ Shortcuts</a>
+                    <a href="#app-development" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">🏗️ Development</a>
+                    <a href="#api-reference" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">📚 API</a>
+                    <a href="#performance" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">⚡ Performance</a>
+                    <a href="#troubleshooting" style="color: #00fff7; text-decoration: none; padding: 0.25rem 0;">🔧 Troubleshooting</a>
+                </div>
+                <button onclick="document.getElementById('quick-toc').style.display='none'" style="position: absolute; top: 0.5rem; right: 0.5rem; background: none; border: none; color: #ff00cc; font-size: 1.2rem; cursor: pointer;">×</button>
+            </div>
+            <section id="introduction">
+                <h1>Introduction</h1>
+                <p>Welcome to the KasOS documentation. KasOS is a modern web-based desktop environment that provides a complete workspace solution with built-in cryptocurrency integration, security features, and extensible application support.</p>
+                
+                <h2>What is KasOS?</h2>
+                <p>KasOS is an open-source desktop environment that runs in your browser. It provides a complete workspace with:</p>
+                <ul>
+                    <li>Full window management system</li>
+                    <li>Built-in cryptocurrency wallet integration</li>
+                    <li>Secure messaging capabilities</li>
+                    <li>Development tools</li>
+                    <li>Extensible application framework</li>
+                </ul>
+                
+                <h2>Key Features</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+                    <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; box-shadow: 0 0 16px #ff00cc33;">
+                        <h3 style="color: #00fff7; margin-top: 0;">🏠 Desktop Environment</h3>
+                        <p>Complete windowing system with taskbar, start menu, and multiple desktop support.</p>
+                    </div>
+                    <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; box-shadow: 0 0 16px #ff00cc33;">
+                        <h3 style="color: #00fff7; margin-top: 0;">🛡️ Security First</h3>
+                        <p>WASM sandboxing, encrypted messaging, and secure wallet integration.</p>
+                    </div>
+                    <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; box-shadow: 0 0 16px #ff00cc33;">
+                        <h3 style="color: #00fff7; margin-top: 0;">💎 Kaspa Integration</h3>
+                        <p>Native KAS wallet, address generation, and blockchain messaging.</p>
+                    </div>
+                    <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; box-shadow: 0 0 16px #ff00cc33;">
+                        <h3 style="color: #00fff7; margin-top: 0;">🔧 Developer Tools</h3>
+                        <p>Built-in IDE, debugger, terminal, and AI-powered development assistance.</p>
+                    </div>
+                </div>
+                
+                <div style="margin:2em 0 1em 0;">
+                    <a href="https://kasos.io" target="_blank" style="display:inline-block;padding:0.75em 1.5em;background:#ff00cc;color:#fff;border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 0 8px #ff00cc;margin-right:1rem;">Launch KasOS &rarr;</a>
+                    <a href="#getting-started" style="display:inline-block;padding:0.75em 1.5em;background:transparent;color:#00fff7;border:2px solid #00fff7;border-radius:8px;text-decoration:none;font-weight:bold;">Get Started</a>
+                </div>
+            </section>
+
+            <section id="getting-started">
+                <h1>Getting Started</h1>
+                
+                <h2>System Requirements</h2>
+                <ul>
+                    <li><strong>Browser:</strong> Chrome 90+, Firefox 88+, Safari 14+, Edge 90+</li>
+                    <li><strong>RAM:</strong> 4GB minimum, 8GB recommended</li>
+                    <li><strong>Storage:</strong> 100MB for core system, additional for apps and data</li>
+                    <li><strong>Internet:</strong> Required for initial load and some features</li>
+                </ul>
+
+                <h2>First Time Setup</h2>
+                <ol>
+                    <li>
+                        <strong>Access KasOS:</strong> Navigate to <a href="https://kasos.io" target="_blank">kasos.io</a> in your browser
+                    </li>
+                    <li>
+                        <strong>Initial Configuration:</strong> Choose your preferred theme and language
+                    </li>
+                    <li>
+                        <strong>Create Profile:</strong> Set up your user profile and workspace preferences
+                    </li>
+                    <li>
+                        <strong>Security Setup:</strong> Configure screen lock and security settings
+                    </li>
+                    <li>
+                        <strong>Wallet Setup (Optional):</strong> Initialize your KAS wallet if desired
+                    </li>
+                </ol>
+
+                <h2>Quick Tour</h2>
+                <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">Desktop Elements</h3>
+                    <ul>
+                        <li><strong>Start Button:</strong> Bottom-left corner, opens application menu</li>
+                        <li><strong>Taskbar:</strong> Bottom of screen, shows running applications</li>
+                        <li><strong>System Tray:</strong> Bottom-right, displays time and system status</li>
+                        <li><strong>Desktop:</strong> Main workspace area for windows and shortcuts</li>
+                    </ul>
+                </div>
+
+                <h2>For Developers</h2>
+                <div style="background: #2d0b45; padding: 1.5rem; border-radius: 12px; border: 1px solid #00fff7; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">Development Environment Setup</h3>
+                    <pre><code class="language-bash"># Clone the repository
+git clone https://github.com/kasos-io/kasos.git
+cd kasos
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build</code></pre>
+                    <p>See the <a href="#app-development">App Development</a> section for detailed development guides.</p>
+                </div>
+            </section>
+
+            <section id="desktop-environment">
+                <h1>Desktop Environment</h1>
+                <h2>Features</h2>
+                <ul>
+                    <li>
+                        <b>Multiple virtual desktops:</b> KasOS supports multiple desktops, allowing you to organize open windows and applications into separate workspaces. This feature is available in the main desktop interface and can be accessed via the desktop switcher.
+                    </li>
+                    <li>
+                        <b>Start menu with application categories:</b> The Start menu provides access to all built-in and installed apps, organized by category. You can search and launch apps from here.
+                    </li>
+                    <li>
+                        <b>Taskbar with running applications:</b> The taskbar at the bottom of the screen shows all currently running apps and windows. You can switch, minimize, or restore apps from the taskbar.
+                    </li>
+                    <li>
+                        <b>System tray with clock and status indicators:</b> The system tray displays the current time and status icons for network and notifications. Some apps may add their own icons for background tasks.
+                    </li>
+                    <li>
+                        <b>Customizable wallpapers and themes:</b> KasOS allows you to change your desktop wallpaper and switch between available color themes, including a cyberpunk theme.
+                    </li>
+                    <li>
+                        <b>Drag-and-drop support:</b> You can move windows around the desktop by dragging their headers. File drag-and-drop is supported in the file manager and compatible apps.
+                    </li>
+                    <li>
+                        <b>Keyboard shortcuts:</b> KasOS provides keyboard shortcuts for window management (move, snap, minimize, switch), app launching, and navigation.
+                    </li>
+                    <li>
+                        <b>Notifications:</b> System and app notifications appear in a notification center accessible from the system tray.
+                    </li>
+                </ul>
+            </section>
+
+            <section id="keyboard-shortcuts">
+                <h1>⌨️ Keyboard Shortcuts</h1>
+                
+                <h2>System Shortcuts</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Shortcut</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + Alt + T</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Open Terminal</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + Alt + D</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Show Desktop</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Alt + Tab</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Switch Between Apps</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + Alt + L</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Lock Screen</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Super + 1-9</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Launch/Switch to App in Taskbar</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Window Management</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Shortcut</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Super + ←/→</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Snap Window Left/Right</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Super + ↑</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Maximize Window</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Super + ↓</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Minimize Window</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Alt + F4</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Close Window</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Application Shortcuts</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Shortcut</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + N</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">New Document/File</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + O</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Open File</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + S</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Save File</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>F12</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Open Developer Tools</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="customization">
+                <h1>🎨 Customization</h1>
+                
+                <h2>Themes</h2>
+                <p>KasOS supports multiple visual themes to personalize your experience:</p>
+                <ul>
+                    <li><strong>CyberPunk (Default):</strong> Dark theme with neon accents</li>
+                    <li><strong>Classic Dark:</strong> Traditional dark desktop theme</li>
+                    <li><strong>Light Mode:</strong> Clean light theme for daytime use</li>
+                    <li><strong>High Contrast:</strong> Accessibility-focused high contrast theme</li>
+                </ul>
+
+                <h2>Wallpapers</h2>
+                <p>Change your desktop background by:</p>
+                <ol>
+                    <li>Right-click on the desktop</li>
+                    <li>Select "Change Wallpaper"</li>
+                    <li>Choose from built-in options or upload custom images</li>
+                    <li>Adjust fit options (stretch, center, tile)</li>
+                </ol>
+
+                <h2>Taskbar Customization</h2>
+                <ul>
+                    <li><strong>Position:</strong> Move taskbar to top, bottom, left, or right</li>
+                    <li><strong>Auto-hide:</strong> Hide taskbar when not in use</li>
+                    <li><strong>Size:</strong> Adjust taskbar thickness</li>
+                    <li><strong>Transparency:</strong> Control taskbar opacity</li>
+                </ul>
+
+                <h2>Start Menu</h2>
+                <p>Customize your Start Menu layout:</p>
+                <ul>
+                    <li>Pin frequently used applications</li>
+                    <li>Organize apps into custom folders</li>
+                    <li>Resize the Start Menu</li>
+                    <li>Enable/disable recent files and apps</li>
+                </ul>
+            </section>
+
+            <section id="troubleshooting">
+                <h1>🔧 Troubleshooting</h1>
+                
+                <h2>Common Issues</h2>
+                
+                <h3>Performance Issues</h3>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <strong>Symptoms:</strong> Slow application loading, UI lag, high memory usage
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul style="margin: 0.5rem 0;">
+                        <li>Close unused applications and windows</li>
+                        <li>Clear browser cache and cookies</li>
+                        <li>Disable browser extensions temporarily</li>
+                        <li>Check available RAM and close other browser tabs</li>
+                        <li>Use incognito/private browsing mode</li>
+                    </ul>
+                </div>
+
+                <h3>Application Won't Load</h3>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <strong>Symptoms:</strong> App icon appears but window doesn't open
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul style="margin: 0.5rem 0;">
+                        <li>Check browser console for JavaScript errors</li>
+                        <li>Refresh the page and try again</li>
+                        <li>Clear browser storage and restart KasOS</li>
+                        <li>Try loading the app in a different browser</li>
+                    </ul>
+                </div>
+
+                <h3>Wallet Connection Issues</h3>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffa500; margin: 1rem 0;">
+                    <strong>Symptoms:</strong> Can't connect to KasWare or other wallets
+                    <br><br>
+                    <strong>Solutions:</strong>
+                    <ul style="margin: 0.5rem 0;">
+                        <li>Ensure wallet extension is installed and enabled</li>
+                        <li>Check that you're logged into your wallet</li>
+                        <li>Refresh both KasOS and your wallet extension</li>
+                        <li>Try connecting in incognito mode</li>
+                        <li>Check wallet extension permissions</li>
+                    </ul>
+                </div>
+
+                <h2>Browser Compatibility</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Browser</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Minimum Version</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;">Chrome</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">90+</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;color:#0f0;">✓ Fully Supported</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;">Firefox</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">88+</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;color:#0f0;">✓ Fully Supported</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;">Safari</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">14+</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;color:#fa0;">⚠ Limited Support</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;">Edge</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">90+</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;color:#0f0;">✓ Fully Supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Reset Options</h2>
+                <div style="background: #2d0b45; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff0000; margin: 1rem 0;">
+                    <h3 style="color: #ff0000; margin-top: 0;">⚠️ Factory Reset</h3>
+                    <p>If all else fails, you can reset KasOS to factory defaults:</p>
+                    <ol>
+                        <li>Open Browser Developer Tools (F12)</li>
+                        <li>Go to Application/Storage tab</li>
+                        <li>Clear all KasOS related Local Storage and IndexedDB</li>
+                        <li>Refresh the page</li>
+                    </ol>
+                    <p><strong>Warning:</strong> This will delete all your data, settings, and installed apps.</p>
+                </div>
+            </section>
+
+            <section id="file-manager">
+                <h1>📁 File Manager</h1>
+                <p>The KasOS File Manager provides comprehensive file system access within your browser environment, offering powerful tools for organizing and managing your digital workspace.</p>
+                
+                <h2>🌟 Core Features</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <ul>
+                        <li><strong>File Operations:</strong> Create, copy, move, delete, and rename files and folders</li>
+                        <li><strong>Multiple Views:</strong> List, grid, and detailed views with sorting options</li>
+                        <li><strong>Advanced Search:</strong> Quick search across files and folders with filters</li>
+                        <li><strong>Built-in Preview:</strong> Preview images, text files, and documents without opening apps</li>
+                        <li><strong>Archive Support:</strong> Extract and create ZIP archives</li>
+                        <li><strong>Permission Management:</strong> View and manage file permissions</li>
+                        <li><strong>Bookmarks System:</strong> Quick access to frequently used folders</li>
+                        <li><strong>Recent Files:</strong> Access recently opened or modified files</li>
+                    </ul>
+                </div>
+
+                <h2>🧭 Navigation</h2>
+                
+                <h3>Address Bar</h3>
+                <ul>
+                    <li><strong>Direct Path Input:</strong> Type paths directly (e.g., /documents/projects/)</li>
+                    <li><strong>Breadcrumb Navigation:</strong> Click any folder in the path to navigate</li>
+                    <li><strong>Auto-completion:</strong> Smart suggestions as you type</li>
+                    <li><strong>History:</strong> Use dropdown to see recent locations</li>
+                </ul>
+
+                <h3>Sidebar Navigation</h3>
+                <ul>
+                    <li><strong>Quick Access:</strong> Home, documents, downloads, and desktop folders</li>
+                    <li><strong>Bookmarks:</strong> Custom bookmarks for frequent locations</li>
+                    <li><strong>Network Drives:</strong> Access to connected network storage</li>
+                    <li><strong>Trash/Recycle Bin:</strong> Recover deleted files</li>
+                </ul>
+
+                <h3>Navigation Controls</h3>
+                <ul>
+                    <li><strong>Back/Forward:</strong> Navigate through folder history</li>
+                    <li><strong>Up Arrow:</strong> Go to parent directory</li>
+                    <li><strong>Refresh:</strong> Reload current directory contents</li>
+                    <li><strong>Home Button:</strong> Return to user home directory</li>
+                </ul>
+
+                <h2>⌨️ Keyboard Shortcuts</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Shortcut</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Action</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Context</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + C</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Copy selected files</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Selection</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + X</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Cut selected files</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Selection</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + V</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Paste files</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Destination</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Delete</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Delete selected files</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Selection</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>F2</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Rename selected file</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Single selection</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + A</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Select all files</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Current folder</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + N</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Create new folder</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Current location</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Ctrl + F</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Open search</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Current folder</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>F5</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Refresh view</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Any view</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>Alt + ↑</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Go to parent folder</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Navigation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>🔍 Advanced Search</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">Search Features</h3>
+                    <ul>
+                        <li><strong>Quick Search:</strong> Instant results as you type</li>
+                        <li><strong>Filter by Type:</strong> Documents, images, videos, etc.</li>
+                        <li><strong>Date Filters:</strong> Modified/created date ranges</li>
+                        <li><strong>Size Filters:</strong> Find files by size range</li>
+                        <li><strong>Content Search:</strong> Search inside text files</li>
+                        <li><strong>Regular Expressions:</strong> Advanced pattern matching</li>
+                    </ul>
+                </div>
+
+                <h2>🗂️ File Organization Tips</h2>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">Best Practices</h3>
+                    <ul>
+                        <li><strong>Folder Structure:</strong> Create logical hierarchies for easy navigation</li>
+                        <li><strong>Naming Conventions:</strong> Use consistent, descriptive file names</li>
+                        <li><strong>Regular Cleanup:</strong> Periodically organize and remove unused files</li>
+                        <li><strong>Backup Important Files:</strong> Use multiple locations for critical data</li>
+                        <li><strong>Use Bookmarks:</strong> Bookmark frequently accessed folders</li>
+                        <li><strong>Version Control:</strong> Include version numbers in file names when needed</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="settings">
+                <h1>⚙️ Settings</h1>
+                <p>The Settings application allows you to configure all aspects of your KasOS experience.</p>
+                
+                <h2>General Settings</h2>
+                <ul>
+                    <li><strong>Language:</strong> Choose your preferred interface language</li>
+                    <li><strong>Time Zone:</strong> Set your local time zone</li>
+                    <li><strong>Date Format:</strong> Customize date and time display</li>
+                    <li><strong>Startup Apps:</strong> Configure which apps launch on startup</li>
+                </ul>
+
+                <h2>Appearance</h2>
+                <ul>
+                    <li><strong>Theme:</strong> Select from available themes</li>
+                    <li><strong>Font Size:</strong> Adjust system font size</li>
+                    <li><strong>Transparency:</strong> Control window transparency effects</li>
+                    <li><strong>Animations:</strong> Enable or disable UI animations</li>
+                </ul>
+
+                <h2>Privacy & Security</h2>
+                <ul>
+                    <li><strong>Screen Lock:</strong> Configure automatic screen locking</li>
+                    <li><strong>Password Policy:</strong> Set password requirements</li>
+                    <li><strong>Data Encryption:</strong> Enable local data encryption</li>
+                    <li><strong>Permission Management:</strong> Control app permissions</li>
+                </ul>
+
+                <h2>Network Settings</h2>
+                <ul>
+                    <li><strong>Proxy Configuration:</strong> Set up proxy servers</li>
+                    <li><strong>DNS Settings:</strong> Configure DNS servers</li>
+                    <li><strong>Offline Mode:</strong> Enable offline capabilities</li>
+                    <li><strong>Bandwidth Limits:</strong> Set data usage limits</li>
+                </ul>
+            </section>
+
+            <section id="window-management">
+                <h1>🪟 Window Management</h1>
+                <h2>Overview</h2>
+                <ul>
+                    <li>Windows can be moved and resized using the mouse.</li>
+                    <li>Each window has minimize, maximize, and close controls.</li>
+                    <li>Windows can be snapped to screen edges or corners for multitasking.</li>
+                    <li>Multiple windows can be open and arranged side by side.</li>
+                    <li>Window focus and stacking are managed automatically.</li>
+                    <li>Keyboard shortcuts are available for switching and snapping windows.</li>
+                </ul>
+                
+                <h2>Advanced Features</h2>
+                <ul>
+                    <li><strong>Window Snapping:</strong> Drag windows to edges for automatic resizing</li>
+                    <li><strong>Virtual Desktops:</strong> Organize windows across multiple desktop spaces</li>
+                    <li><strong>Always on Top:</strong> Pin important windows above others</li>
+                    <li><strong>Window Groups:</strong> Group related windows together</li>
+                    <li><strong>Transparency:</strong> Adjust window opacity for better multitasking</li>
+                </ul>
+                
+                <h2>Usage Tips</h2>
+                <ul>
+                    <li>Double-click window title bar to maximize/restore</li>
+                    <li>Right-click title bar for window context menu</li>
+                    <li>Use middle-click on taskbar icons to close apps</li>
+                    <li>Shift+click taskbar icons to open new instances</li>
+                </ul>
+            </section>
+<section id="application-system">
+    <h1>Application System</h1>
+    <h2>Overview</h2>
+    <ul>
+        <li>
+            <b>Modular app loading:</b> Apps are loaded as JavaScript modules, enabling fast startup and easy updates.
+        </li>
+        <li>
+            <b>App registry and sandboxing:</b> All apps are registered in the KasOS app registry and run in isolated sandboxes for security and stability.
+        </li>
+        <li>
+            <b>Import/export custom apps:</b> Users can import new apps from files or URLs, and export their own apps for sharing or backup.
+        </li>
+    </ul>
+    <h2>How it Works</h2>
+    <p>Apps are loaded as JavaScript modules and registered in the KasOS app registry. Users can import new apps or export their own. The system ensures that each app only has access to the resources and permissions you grant.</p>
+</section>
+<section id="text-editor">
+    <h1>📝 Text Editor</h1>
+    <p>
+        The KasOS Text Editor is a lightweight, fast editor for notes, code, and general text files. It supports syntax highlighting for popular programming languages, basic find/replace, and file saving to your workspace.
+    </p>
+    <ul>
+        <li>Supports syntax highlighting for over 20 programming languages.</li>
+        <li>You can open, edit, and save files directly to your KasOS workspace.</li>
+        <li>The editor auto-detects file types based on extension.</li>
+        <li>Open the Text Editor from the Start menu or desktop shortcut.</li>
+        <li>Create new files, open existing ones, and save your work locally.</li>
+    </ul>
+</section>
+<section id="dev-tools">
+    <h1>🛠️ Dev Tools</h1>
+    <p>
+        The Dev Tools suite provides utilities for debugging, inspecting, and testing your KasOS apps. It includes a JavaScript console, DOM inspector, and performance monitor.
+    </p>
+    <ul>
+        <li>Allows live inspection and editing of running apps.</li>
+        <li>You can view logs, errors, and performance metrics in real time.</li>
+        <li>The JavaScript console supports ES6+ syntax.</li>
+        <li>Access Dev Tools from the Start menu under "Development".</li>
+        <li>Use the console to run JavaScript commands in the KasOS environment.</li>
+    </ul>
+</section>
+<section id="terminal">
+    <h1>💻 Terminal</h1>
+    <p>
+        The built-in Terminal offers a command-line interface for advanced users. It supports basic shell commands, scripting, and interaction with the KasOS API.
+    </p>
+    <ul>
+        <li>Supports command history and tab completion.</li>
+        <li>You can run scripts to automate tasks within KasOS.</li>
+        <li>Terminal output can be copied and pasted with standard shortcuts.</li>
+        <li>Launch the Terminal from the Start menu or desktop.</li>
+        <li>Run commands to manage files, launch apps, or automate tasks.</li>
+    </ul>
+</section>
+<section id="kaswallet">
+    <h1>👛 KasWallet</h1>
+    <p>
+        KasWallet is the integrated Kaspa wallet for managing your KAS cryptocurrency securely within KasOS. You can send, receive, and store KAS, view your transaction history, and manage multiple addresses.
+    </p>
+    <div style="margin-top:1.5em"></div>
+    <h3>How to Use KasWallet</h3>
+    <ul>
+        <li>Encrypts all wallet data and stores it locally for your privacy.</li>
+        <li>You can manage multiple Kaspa addresses within a single wallet.</li>
+        <li>Supports QR code generation for easy receiving.</li>
+        <li>Open KasWallet from the Start menu under Built-in Applications.</li>
+        <li>Send and receive KAS using your wallet address or QR code.</li>
+        <li>View your balance and recent transactions in the main dashboard.</li>
+        <li>Access your wallet settings to manage addresses and backup your recovery phrase.</li>
+    </ul>
+    <h3>How to Add Kasware Wallet to Your Browser</h3>
+    <ul>
+        <li>Kasware Wallet is available as a browser extension for Chrome and Firefox.</li>
+        <li>Visit the official Kasware Wallet website or the Chrome Web Store/Firefox Add-ons page.</li>
+        <li>Click "Add to Chrome" or "Add to Firefox" to install the extension.</li>
+        <li>After installation, click the Kasware icon in your browser toolbar to launch the wallet.</li>
+        <li>Follow the on-screen instructions to create a new wallet or import an existing one using your recovery phrase.</li>
+        <li>Once set up, you can use Kasware Wallet to interact with Kaspa dApps and manage your KAS directly from your browser.</li>
+    </ul>
+</section>
+<section id="kasia-messenger">
+    <h1>💬 Kasia Messenger</h1>
+    <p>
+        Kasia Messenger is a secure, end-to-end encrypted messaging app built into KasOS. It allows you to communicate privately with other KasOS users over the Kaspa network.
+    </p>
+    <ul>
+        <li>All messages in Kasia Messenger are end-to-end encrypted.</li>
+        <li>You can add contacts using their Kasia ID or wallet address.</li>
+        <li>Group chats and file sharing are supported.</li>
+        <li>Open Kasia Messenger from the Start menu.</li>
+        <li>Add contacts using their Kasia ID or wallet address.</li>
+        <li>All messages are encrypted and can only be read by you and your recipient.</li>
+        <li>Supports group chats and file sharing.</li>
+    </ul>
+</section>
+            <section id="app-development">
+                <h1>App Development</h1>
+                <h2>Getting Started</h2>
+                <p>
+        KasOS allows you to create custom applications using JavaScript. Each app runs in a sandboxed environment and is registered with the KasOS app registry. 
+        To get started, you should:
+    </p>
+    <ol>
+        <li>
+            <b>Set up your development environment:</b> Make sure you have Node.js and npm installed. Clone the KasOS repository and install dependencies as described in the <a href="#getting-started">Getting Started</a> section.
+        </li>
+        <li>
+            <b>Create your app module:</b> Write your app as a JavaScript module. Your app should export an object with at least an <code>id</code>, <code>name</code>, and <code>init</code> function.
+        </li>
+        <li>
+            <b>Register your app:</b> Use <code>window.KasOS.registerApp()</code> to register your app with the system. This makes it available in the KasOS app menu.
+        </li>
+        <li>
+            <b>Test your app:</b> Launch KasOS in development mode (<code>npm run dev</code>) and open your app from the desktop environment.
+        </li>
+        <li>
+            <b>Distribute your app:</b> You can share your app module with others, or contribute it to the KasOS app registry.
+        </li>
+    </ol>
+    <p>
+        Apps can interact with the KasOS API to open windows, access files, communicate with other apps, and more. For advanced features, see the <a href="#api-reference">API Reference</a> section.
+    </p>
+    <pre><code class="language-js">// Example app registration
+window.KasOS.registerApp({
+  id: 'my-app',
+  name: 'My App',
+  init: function() {
+    // App logic here
+  }
+});</code></pre>
+            </section>
+
+            <section id="advanced-development">
+                <h1>🚀 Advanced Development</h1>
+                
+                <h2>App Architecture Patterns</h2>
+                <p>KasOS apps follow modular architecture patterns for maintainability and performance:</p>
+                
+                <h3>MVC Pattern</h3>
+                <pre><code class="language-js">// Model - Data management
+class AppModel {
+    constructor() {
+        this.data = {};
+        this.observers = [];
+    }
+    
+    update(key, value) {
+        this.data[key] = value;
+        this.notifyObservers();
+    }
+    
+    notifyObservers() {
+        this.observers.forEach(observer => observer.update(this.data));
+    }
+}
+
+// View - UI management
+class AppView {
+    constructor(container) {
+        this.container = container;
+    }
+    
+    render(data) {
+        this.container.innerHTML = this.template(data);
+        this.bindEvents();
+    }
+    
+    template(data) {
+        return `&lt;div class="app-content"&gt;${data.content}&lt;/div&gt;`;
+    }
+}
+
+// Controller - Business logic
+class AppController {
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+        this.model.observers.push(this.view);
+    }
+}</code></pre>
+
+                <h3>Component-Based Architecture</h3>
+                <pre><code class="language-js">// Reusable component system
+class Component {
+    constructor(props = {}) {
+        this.props = props;
+        this.state = {};
+        this.element = null;
+    }
+    
+    setState(newState) {
+        this.state = { ...this.state, ...newState };
+        this.render();
+    }
+    
+    render() {
+        if (this.element) {
+            this.element.innerHTML = this.template();
+        }
+    }
+    
+    mount(container) {
+        this.element = document.createElement('div');
+        this.element.className = this.constructor.name.toLowerCase();
+        container.appendChild(this.element);
+        this.render();
+        this.componentDidMount();
+    }
+    
+    componentDidMount() {
+        // Override in subclasses
+    }
+}
+
+// Example usage
+class ButtonComponent extends Component {
+    template() {
+        return `&lt;button onclick="this.handleClick()"&gt;${this.props.text}&lt;/button&gt;`;
+    }
+    
+    handleClick() {
+        if (this.props.onClick) this.props.onClick();
+    }
+}</code></pre>
+
+                <h2>State Management</h2>
+                <pre><code class="language-js">// Global state management for complex apps
+class StateManager {
+    constructor() {
+        this.state = {};
+        this.subscribers = new Map();
+    }
+    
+    subscribe(key, callback) {
+        if (!this.subscribers.has(key)) {
+            this.subscribers.set(key, []);
+        }
+        this.subscribers.get(key).push(callback);
+    }
+    
+    setState(key, value) {
+        this.state[key] = value;
+        if (this.subscribers.has(key)) {
+            this.subscribers.get(key).forEach(callback => callback(value));
+        }
+    }
+    
+    getState(key) {
+        return this.state[key];
+    }
+}
+
+// Usage in app
+const appState = new StateManager();
+appState.subscribe('user', (user) => {
+    console.log('User updated:', user);
+});
+appState.setState('user', { name: 'John', email: 'john@example.com' });</code></pre>
+
+                <h2>Performance Optimization</h2>
+                <ul>
+                    <li><strong>Lazy Loading:</strong> Load components only when needed</li>
+                    <li><strong>Virtual Scrolling:</strong> Efficiently handle large lists</li>
+                    <li><strong>Debouncing:</strong> Optimize user input handling</li>
+                    <li><strong>Memoization:</strong> Cache expensive computations</li>
+                </ul>
+
+                <pre><code class="language-js">// Lazy loading example
+class LazyLoader {
+    static async loadComponent(name) {
+        const module = await import(`./components/${name}.js`);
+        return module.default;
+    }
+}
+
+// Virtual scrolling implementation
+class VirtualScroll {
+    constructor(container, itemHeight, items) {
+        this.container = container;
+        this.itemHeight = itemHeight;
+        this.items = items;
+        this.visibleItems = [];
+        this.setupScrollListener();
+    }
+    
+    setupScrollListener() {
+        this.container.addEventListener('scroll', this.handleScroll.bind(this));
+    }
+    
+    handleScroll() {
+        const scrollTop = this.container.scrollTop;
+        const visibleCount = Math.ceil(this.container.clientHeight / this.itemHeight);
+        const startIndex = Math.floor(scrollTop / this.itemHeight);
+        
+        this.renderVisibleItems(startIndex, visibleCount);
+    }
+}</code></pre>
+            </section>
+
+            <section id="testing-debugging">
+                <h1>🧪 Testing & Debugging</h1>
+                
+                <h2>Unit Testing Framework</h2>
+                <p>KasOS includes a built-in testing framework for app development:</p>
+                
+                <pre><code class="language-js">// Test suite definition
+const TestSuite = {
+    describe(name, tests) {
+        console.group(`📋 ${name}`);
+        tests();
+        console.groupEnd();
+    },
+    
+    it(description, test) {
+        try {
+            test();
+            console.log(`✅ ${description}`);
+        } catch (error) {
+            console.error(`❌ ${description}:`, error.message);
+        }
+    },
+    
+    expect(actual) {
+        return {
+            toBe(expected) {
+                if (actual !== expected) {
+                    throw new Error(`Expected ${expected}, got ${actual}`);
+                }
+            },
+            toEqual(expected) {
+                if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+                    throw new Error(`Expected ${JSON.stringify(expected)}, got ${JSON.stringify(actual)}`);
+                }
+            },
+            toThrow() {
+                if (typeof actual !== 'function') {
+                    throw new Error('Expected a function');
+                }
+                try {
+                    actual();
+                    throw new Error('Expected function to throw');
+                } catch (e) {
+                    // Expected
+                }
+            }
+        };
+    }
+};
+
+// Example test
+TestSuite.describe('Calculator App', () => {
+    TestSuite.it('should add two numbers correctly', () => {
+        const result = Calculator.add(2, 3);
+        TestSuite.expect(result).toBe(5);
+    });
+    
+    TestSuite.it('should handle invalid input', () => {
+        TestSuite.expect(() => Calculator.add('a', 'b')).toThrow();
+    });
+});</code></pre>
+
+                <h2>Debug Console Integration</h2>
+                <pre><code class="language-js">// Enhanced debugging utilities
+class DebugUtils {
+    static log(level, message, data = null) {
+        const timestamp = new Date().toISOString();
+        const output = `[${timestamp}] ${level.toUpperCase()}: ${message}`;
+        
+        console.log(output);
+        if (data) console.log(data);
+        
+        // Send to KasOS debug panel
+        window.KasOS?.debug?.log(level, message, data);
+    }
+    
+    static profile(name, fn) {
+        const start = performance.now();
+        const result = fn();
+        const end = performance.now();
+        
+        this.log('PERF', `${name} took ${(end - start).toFixed(2)}ms`);
+        return result;
+    }
+    
+    static memory() {
+        if (performance.memory) {
+            return {
+                used: Math.round(performance.memory.usedJSHeapSize / 1048576),
+                total: Math.round(performance.memory.totalJSHeapSize / 1048576),
+                limit: Math.round(performance.memory.jsHeapSizeLimit / 1048576)
+            };
+        }
+        return null;
+    }
+}
+
+// Usage in development
+DebugUtils.log('info', 'App initialized', { version: '1.0.0' });
+const result = DebugUtils.profile('Heavy computation', () => {
+    // Your expensive operation here
+    return heavyComputation();
+});</code></pre>
+
+                <h2>Error Handling Best Practices</h2>
+                <pre><code class="language-js">// Global error handling
+class ErrorHandler {
+    constructor() {
+        this.setupGlobalHandlers();
+    }
+    
+    setupGlobalHandlers() {
+        window.addEventListener('error', this.handleError.bind(this));
+        window.addEventListener('unhandledrejection', this.handlePromiseRejection.bind(this));
+    }
+    
+    handleError(event) {
+        const error = {
+            message: event.message,
+            filename: event.filename,
+            lineno: event.lineno,
+            colno: event.colno,
+            stack: event.error?.stack
+        };
+        
+        this.reportError('javascript', error);
+    }
+    
+    handlePromiseRejection(event) {
+        const error = {
+            reason: event.reason,
+            promise: event.promise
+        };
+        
+        this.reportError('promise', error);
+        event.preventDefault(); // Prevent console spam
+    }
+    
+    reportError(type, error) {
+        // Log to console
+        console.error(`[${type.toUpperCase()}]`, error);
+        
+        // Send to KasOS error system
+        window.KasOS?.errorSystem?.report(type, error);
+        
+        // Optional: Send to external logging service
+        this.sendToLogger(type, error);
+    }
+}
+
+// Initialize error handling
+const errorHandler = new ErrorHandler();</code></pre>
+            </section>
+
+            <section id="deployment">
+                <h1>📦 Deployment</h1>
+                
+                <h2>App Packaging</h2>
+                <p>Package your KasOS app for distribution:</p>
+                
+                <pre><code class="language-js">// app-manifest.json
+{
+    "id": "my-awesome-app",
+    "name": "My Awesome App",
+    "version": "1.0.0",
+    "description": "An amazing KasOS application",
+    "author": "Your Name",
+    "license": "MIT",
+    "icon": "icon.png",
+    "main": "app.js",
+    "permissions": [
+        "filesystem",
+        "network",
+        "notifications"
+    ],
+    "dependencies": {
+        "crypto-js": "^4.1.1"
+    },
+    "scripts": {
+        "build": "webpack --mode production",
+        "test": "jest"
+    }
+}</code></pre>
+
+                <h2>Build Process</h2>
+                <pre><code class="language-js">// webpack.config.js for KasOS apps
+const path = require('path');
+
+module.exports = {
+    entry: './src/app.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'app.bundle.js',
+        library: 'MyApp',
+        libraryTarget: 'umd'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    externals: {
+        'kasos': 'KasOS'
+    }
+};</code></pre>
+
+                <h2>App Store Submission</h2>
+                <ol>
+                    <li><strong>Prepare Package:</strong> Ensure all files are included and minified</li>
+                    <li><strong>Test Thoroughly:</strong> Run all tests and manual testing</li>
+                    <li><strong>Create Screenshots:</strong> Provide high-quality app screenshots</li>
+                    <li><strong>Write Description:</strong> Clear, compelling app description</li>
+                    <li><strong>Submit for Review:</strong> Upload to KasOS App Store</li>
+                </ol>
+
+                <h2>Version Management</h2>
+                <pre><code class="language-bash"># Semantic versioning workflow
+npm version patch  # Bug fixes: 1.0.0 -> 1.0.1
+npm version minor  # New features: 1.0.0 -> 1.1.0
+npm version major  # Breaking changes: 1.0.0 -> 2.0.0
+
+# Automated deployment
+npm run build
+npm run test
+npm publish --registry=https://apps.kasos.io</code></pre>
+
+                <h2>Distribution Options</h2>
+                <ul>
+                    <li><strong>KasOS App Store:</strong> Official distribution channel</li>
+                    <li><strong>Direct Distribution:</strong> Host on your own servers</li>
+                    <li><strong>Enterprise Deployment:</strong> Private app stores for organizations</li>
+                    <li><strong>Side Loading:</strong> Development and testing installations</li>
+                </ul>
+            </section>
+            <section id="api-reference">
+                <h1>📚 API Reference</h1>
+                
+                <h2>Core APIs</h2>
+                
+                <h3>Application Management</h3>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Method</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Description</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.registerApp(app)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Register a new application</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">app: AppDefinition</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.openApp(id, options)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Open an app by ID</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">id: string, options: object</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.closeApp(id)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Close an application</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">id: string</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.getAppList()</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Get all registered apps</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">none</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.getRunningApps()</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Get currently running apps</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">none</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Window Management</h3>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Method</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Description</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.createWindow(options)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Create a new window</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">options: WindowOptions</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.getWindow(id)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Get window instance</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">id: string</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.maximizeWindow(id)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Maximize a window</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">id: string</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.minimizeWindow(id)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Minimize a window</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">id: string</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>File System</h3>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Method</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Description</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.fs.readFile(path)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Read file contents</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">path: string</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.fs.writeFile(path, data)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Write file contents</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">path: string, data: any</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.fs.deleteFile(path)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Delete a file</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">path: string</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.fs.listDirectory(path)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">List directory contents</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">path: string</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Inter-App Communication</h3>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 4px;margin:1.5rem 0;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Method</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Description</th>
+                            <th style="text-align:left;padding:8px;border:1px solid #ff00cc;color:#00fff7;">Parameters</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.sendMessage(to, message)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Send message to app</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">to: string, message: object</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.onMessage(callback)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Listen for messages</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">callback: function</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:8px;border:1px solid #ff00cc;"><code>KasOS.broadcast(message)</code></td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">Broadcast to all apps</td>
+                            <td style="padding:8px;border:1px solid #ff00cc;">message: object</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Example Usage</h2>
+                <pre><code class="language-js">// Complete app registration example
+window.KasOS.registerApp({
+    id: 'my-calculator',
+    name: 'Calculator',
+    version: '1.0.0',
+    icon: 'calculator-icon.png',
+    permissions: ['notifications'],
+    
+    init: function() {
+        // Create main window
+        const window = KasOS.createWindow({
+            title: 'Calculator',
+            width: 300,
+            height: 400,
+            resizable: false,
+            content: this.createUI()
+        });
+        
+        // Setup message handling
+        KasOS.onMessage((message) => {
+            if (message.type === 'calculate') {
+                this.performCalculation(message.data);
+            }
+        });
+        
+        return window;
+    },
+    
+    createUI: function() {
+        return `
+            &lt;div class="calculator"&gt;
+                &lt;div class="display"&gt;0&lt;/div&gt;
+                &lt;div class="buttons"&gt;
+                    &lt;button onclick="this.app.inputNumber(1)"&gt;1&lt;/button&gt;
+                    &lt;button onclick="this.app.inputNumber(2)"&gt;2&lt;/button&gt;
+                    &lt;button onclick="this.app.calculate()"&gt;=&lt;/button&gt;
+                    &lt;!-- More calculator buttons --&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `;
+    },
+    
+    performCalculation: function(expression) {
+        try {
+            // Use safer evaluation in production
+            const result = Function('"use strict"; return (' + expression + ')')();
+            KasOS.sendMessage('display-app', { type: 'show-result', result });
+            return result;
+        } catch (error) {
+            console.error('Calculation error:', error);
+            return 'Error';
+        }
+    }
+});</code></pre>
+
+                <h2>Event System</h2>
+                <pre><code class="language-js">// System events you can listen for
+KasOS.on('app-opened', (appId) => {
+    console.log(`App ${appId} was opened`);
+});
+
+KasOS.on('window-created', (windowId) => {
+    console.log(`Window ${windowId} was created`);
+});
+
+KasOS.on('theme-changed', (newTheme) => {
+    console.log(`Theme changed to ${newTheme}`);
+});
+
+// Custom events
+KasOS.emit('my-custom-event', { data: 'Hello World' });
+KasOS.on('my-custom-event', (data) => {
+    console.log('Received:', data);
+});
+
+// Event cleanup (important for preventing memory leaks)
+const unsubscribe = KasOS.on('some-event', handler);
+// Later, when component unmounts:
+unsubscribe();</code></pre>
+            </section>
+            <section id="security">
+                <h1>Security Features</h1>
+                <ul>
+                    <li>Cryptographic library validation to ensure integrity of sensitive operations</li>
+                    <li>WASM sandboxing for untrusted code and third-party apps</li>
+                    <li>Secure login and wallet authentication with encrypted credentials</li>
+                    <li>Automatic session timeout and lock screen support</li>
+                    <li>Permission system for app access to files, network, and sensitive APIs</li>
+                    <li>End-to-end encrypted messaging in Kasia Messenger</li>
+                    <li>Regular security updates and vulnerability patching</li>
+                </ul>
+                <p>
+        KasOS is designed with security in mind at every layer. All apps run in isolated sandboxes, and sensitive operations such as wallet access and messaging use strong cryptography. The permission system ensures that apps only access what you explicitly allow. Security updates are delivered regularly to address new threats and keep your environment safe.
+    </p>
+            </section>
+
+            <section id="architecture">
+                <h1>🏗️ Architecture</h1>
+                
+                <h2>System Overview</h2>
+                <p>KasOS follows a modular, event-driven architecture designed for security, performance, and extensibility.</p>
+                
+                <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">Core Components</h3>
+                    <ul>
+                        <li><strong>Kernel:</strong> Core system management and process isolation</li>
+                        <li><strong>Window Manager:</strong> UI rendering and window lifecycle management</li>
+                        <li><strong>App Runtime:</strong> Application sandboxing and execution environment</li>
+                        <li><strong>File System:</strong> Virtual file system with browser storage backend</li>
+                        <li><strong>Security Layer:</strong> Permission management and sandbox enforcement</li>
+                        <li><strong>Communication Bus:</strong> Inter-app messaging and event system</li>
+                    </ul>
+                </div>
+
+                <h2>Component Diagram</h2>
+                <pre style="background: #2d0b45; border: 2px solid #00fff7; color: #00fff7; padding: 1rem; font-family: monospace;">
+┌─────────────────────────────────────────────────────────┐
+│                    User Interface                       │
+├─────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
+│  │   App A     │  │   App B     │  │   App C     │     │
+│  │ (Sandboxed) │  │ (Sandboxed) │  │ (Sandboxed) │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘     │
+├─────────────────────────────────────────────────────────┤
+│              Application Runtime Layer                  │
+├─────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
+│  │   Window    │  │ File System │  │   Network   │     │
+│  │  Manager    │  │   Manager   │  │   Manager   │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘     │
+├─────────────────────────────────────────────────────────┤
+│                   Security Layer                       │
+├─────────────────────────────────────────────────────────┤
+│                     KasOS Kernel                       │
+├─────────────────────────────────────────────────────────┤
+│                   Browser Engine                       │
+└─────────────────────────────────────────────────────────┘
+</pre>
+
+                <h2>Data Flow</h2>
+                <ol>
+                    <li><strong>User Interaction:</strong> User interacts with UI elements</li>
+                    <li><strong>Event Processing:</strong> Events are captured and processed by the window manager</li>
+                    <li><strong>Permission Check:</strong> Security layer validates app permissions</li>
+                    <li><strong>App Execution:</strong> Sandboxed app code executes with limited privileges</li>
+                    <li><strong>Resource Access:</strong> Apps request resources through managed APIs</li>
+                    <li><strong>Response Rendering:</strong> Results are rendered back to the UI</li>
+                </ol>
+
+                <h2>Security Model</h2>
+                <div style="background: #2d0b45; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff0000; margin: 1rem 0;">
+                    <h3 style="color: #ff0000; margin-top: 0;">🛡️ Security Layers</h3>
+                    <ul>
+                        <li><strong>Process Isolation:</strong> Each app runs in a separate JavaScript context</li>
+                        <li><strong>Permission System:</strong> Granular permissions for file, network, and system access</li>
+                        <li><strong>WASM Sandboxing:</strong> Critical operations run in WebAssembly for memory safety</li>
+                        <li><strong>Content Security Policy:</strong> Strict CSP prevents code injection attacks</li>
+                        <li><strong>Crypto Validation:</strong> All cryptographic operations are validated</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="crypto-integration">
+                <h1>💎 Crypto Integration</h1>
+                
+                <h2>Kaspa Network Integration</h2>
+                <p>KasOS provides native integration with the Kaspa cryptocurrency network.</p>
+                
+                <h3>Wallet Management</h3>
+                <pre><code class="language-js">// KasOS Crypto API
+const crypto = KasOS.crypto;
+
+// Generate new wallet
+const wallet = await crypto.generateWallet();
+console.log('Address:', wallet.address);
+console.log('Private Key:', wallet.privateKey); // Handle securely!
+
+// Import existing wallet
+const importedWallet = await crypto.importWallet(privateKey);
+
+// Get balance
+const balance = await crypto.getBalance(address);
+console.log('Balance:', balance, 'KAS');
+
+// Send transaction
+const txResult = await crypto.sendTransaction({
+    to: 'kaspa:qq...',
+    amount: 1000000, // Amount in sompi (1 KAS = 100,000,000 sompi)
+    fee: 1000,
+    privateKey: wallet.privateKey
+});
+console.log('Transaction ID:', txResult.txId);</code></pre>
+
+                <h3>Address Validation</h3>
+                <pre><code class="language-js">// Validate Kaspa addresses
+function validateKaspaAddress(address) {
+    // Check prefix
+    if (!address.startsWith('kaspa:')) {
+        return false;
+    }
+    
+    // Check format (bech32m encoding)
+    const addressPart = address.substring(6);
+    return crypto.validateBech32m(addressPart);
+}
+
+// Usage
+console.log(validateKaspaAddress('kaspa:qqkqsx4hc5x7...'));  // true
+console.log(validateKaspaAddress('invalid-address'));        // false</code></pre>
+
+                <h2>Security Best Practices</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ffa500; margin: 1rem 0;">
+                    <h3 style="color: #ffa500; margin-top: 0;">⚠️ Important Security Notes</h3>
+                    <ul>
+                        <li><strong>Never log private keys:</strong> Private keys should never appear in console logs</li>
+                        <li><strong>Encrypt sensitive data:</strong> Always encrypt wallet data before storage</li>
+                        <li><strong>Validate all inputs:</strong> Validate addresses and amounts before transactions</li>
+                        <li><strong>Use secure random:</strong> Use cryptographically secure random number generation</li>
+                        <li><strong>Time-based validation:</strong> Implement transaction timeouts and validation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="wasm-sandbox">
+                <h1>🔒 WASM Sandbox</h1>
+                
+                <h2>WebAssembly Security Environment</h2>
+                <p>KasOS uses WebAssembly (WASM) to create secure execution environments for critical operations.</p>
+                
+                <h3>Sandbox Implementation</h3>
+                <pre><code class="language-js">// WASM Sandbox for secure code execution
+class WASMSandbox {
+    constructor() {
+        this.modules = new Map();
+        this.instances = new Map();
+    }
+    
+    async loadModule(name, wasmBytes) {
+        const module = await WebAssembly.compile(wasmBytes);
+        this.modules.set(name, module);
+        return module;
+    }
+    
+    async createInstance(moduleName, imports = {}) {
+        const module = this.modules.get(moduleName);
+        if (!module) {
+            throw new Error(`Module ${moduleName} not found`);
+        }
+        
+        const instance = await WebAssembly.instantiate(module, {
+            env: {
+                memory: new WebAssembly.Memory({ initial: 1 }),
+                log: (ptr, len) => {
+                    const bytes = new Uint8Array(instance.exports.memory.buffer, ptr, len);
+                    console.log(new TextDecoder().decode(bytes));
+                },
+                ...imports
+            }
+        });
+        
+        const instanceId = this.generateId();
+        this.instances.set(instanceId, instance);
+        return instanceId;
+    }
+    
+    execute(instanceId, functionName, ...args) {
+        const instance = this.instances.get(instanceId);
+        if (!instance) {
+            throw new Error(`Instance ${instanceId} not found`);
+        }
+        
+        return instance.exports[functionName](...args);
+    }
+}
+
+// Usage for cryptographic operations
+const sandbox = new WASMSandbox();
+await sandbox.loadModule('crypto', cryptoWasmBytes);
+const instanceId = await sandbox.createInstance('crypto');
+const hash = sandbox.execute(instanceId, 'sha256', dataPtr, dataLen);</code></pre>
+
+                <h2>Use Cases</h2>
+                <ul>
+                    <li><strong>Cryptographic Operations:</strong> Hash functions, encryption, key generation</li>
+                    <li><strong>Data Processing:</strong> Large dataset manipulation with memory safety</li>
+                    <li><strong>Image/Video Processing:</strong> Media manipulation in isolated environment</li>
+                    <li><strong>Untrusted Code Execution:</strong> Running third-party algorithms safely</li>
+                </ul>
+            </section>
+
+            <section id="ai-integration">
+                <h1>🤖 AI Integration</h1>
+                
+                <h2>AI-Powered Development Tools</h2>
+                <p>KasOS includes AI assistance for development, debugging, and user support.</p>
+                
+                <h3>Code Generation Assistant</h3>
+                <pre><code class="language-js">// AI Code Assistant API
+class AICodeAssistant {
+    constructor() {
+        this.apiEndpoint = 'https://ai.kasos.io/api';
+    }
+    
+    async generateCode(prompt, language = 'javascript') {
+        const response = await fetch(`${this.apiEndpoint}/generate`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                prompt,
+                language,
+                context: this.getContextInfo()
+            })
+        });
+        
+        return response.json();
+    }
+    
+    async reviewCode(code) {
+        const response = await fetch(`${this.apiEndpoint}/review`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code })
+        });
+        
+        return response.json();
+    }
+    
+    getContextInfo() {
+        return {
+            kasos_version: KasOS.version,
+            available_apis: Object.keys(KasOS),
+            current_app: KasOS.getCurrentApp()?.id
+        };
+    }
+}
+
+// Usage
+const ai = new AICodeAssistant();
+const suggestion = await ai.generateCode('Create a todo list component');
+console.log(suggestion.code);</code></pre>
+
+                <h2>Natural Language Interface</h2>
+                <p>Process voice and text commands naturally:</p>
+                <ul>
+                    <li>"Open calculator app" → Launches calculator</li>
+                    <li>"Find files containing 'budget'" → Searches file system</li>
+                    <li>"What is my KAS balance?" → Checks wallet balance</li>
+                    <li>"Create new text document" → Opens text editor with new file</li>
+                </ul>
+            </section>
+
+            <section id="performance">
+                <h1>⚡ Performance Overview</h1>
+                <p>KasOS is designed for optimal performance across all devices and browsers. This comprehensive guide covers optimization strategies, monitoring tools, and best practices for achieving excellent performance in your KasOS applications and the system itself.</p>
+                
+                <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; box-shadow: 0 0 16px #ff00cc33; margin: 2rem 0;">
+                    <h2 style="color: #00fff7; margin-top: 0;">Performance Pillars</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">🧠 Memory Management</h3>
+                            <p>Efficient memory usage and garbage collection optimization</p>
+                        </div>
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">🎨 Rendering</h3>
+                            <p>Smooth UI rendering and animation optimization</p>
+                        </div>
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">⚡ JavaScript</h3>
+                            <p>Code optimization and execution efficiency</p>
+                        </div>
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">📊 Monitoring</h3>
+                            <p>Real-time performance tracking and analytics</p>
+                        </div>
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">🌐 Network</h3>
+                            <p>Caching strategies and network optimization</p>
+                        </div>
+                        <div style="background: #2d0b45; padding: 1rem; border-radius: 8px;">
+                            <h3 style="color: #0f0; margin-top: 0;">🔧 Troubleshooting</h3>
+                            <p>Common issues and performance debugging</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>🎯 Performance Targets</h2>
+                <table style="width:100%;border-collapse:separate;border-spacing:0 8px;margin:1.5rem 0;background:#23113a;border-radius:12px;overflow:hidden;box-shadow:0 0 16px #00fff733;">
+                    <thead>
+                        <tr style="background:#2d0b45;">
+                            <th style="padding:12px;border:1px solid #ff00cc;color:#00fff7;">Metric</th>
+                            <th style="padding:12px;border:1px solid #ff00cc;color:#00fff7;">Target</th>
+                            <th style="padding:12px;border:1px solid #ff00cc;color:#00fff7;">Critical Threshold</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:10px;border:1px solid #ff00cc;">App Startup Time</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#0f0;">&lt; 2 seconds</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#ff6b6b;">&gt; 5 seconds</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:10px;border:1px solid #ff00cc;">Memory Usage</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#0f0;">&lt; 500MB</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#ff6b6b;">&gt; 1GB</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:10px;border:1px solid #ff00cc;">Frame Rate</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#0f0;">&gt;= 60 FPS</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#ff6b6b;">&lt; 30 FPS</td>
+                        </tr>
+                        <tr style="background:#1a093b;">
+                            <td style="padding:10px;border:1px solid #ff00cc;">Bundle Size</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#0f0;">&lt; 2MB</td>
+                            <td style="padding:10px;border:1px solid #ff00cc;color:#ff6b6b;">&gt; 10MB</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="performance-memory">
+                <h1>🧠 Memory Management</h1>
+                <p>Effective memory management is crucial for maintaining performance in KasOS applications, especially for long-running desktop environments.</p>
+                
+                <h2>Memory Optimization Strategies</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">Core Principles</h3>
+                    <ul>
+                        <li><strong>Lazy Loading:</strong> Load app components only when needed</li>
+                        <li><strong>Object Pooling:</strong> Reuse objects to reduce garbage collection</li>
+                        <li><strong>Weak References:</strong> Prevent memory leaks in observer patterns</li>
+                        <li><strong>Cache Management:</strong> Intelligent caching with automatic cleanup</li>
+                        <li><strong>Event Cleanup:</strong> Properly remove event listeners when no longer needed</li>
+                        <li><strong>DOM Node Management:</strong> Minimize DOM manipulations and reflows</li>
+                    </ul>
+                </div>
+
+                <h2>Memory Monitoring Tools</h2>
+                <pre><code class="language-js">// Built-in memory monitoring utilities
+class MemoryMonitor {
+    static getMemoryUsage() {
+        if (performance.memory) {
+            return {
+                used: Math.round(performance.memory.usedJSHeapSize / 1048576),
+                total: Math.round(performance.memory.totalJSHeapSize / 1048576),
+                limit: Math.round(performance.memory.jsHeapSizeLimit / 1048576)
+            };
+        }
+        return null;
+    }
+    
+    static startMemoryWatch() {
+        setInterval(() => {
+            const usage = MemoryMonitor.getMemoryUsage();
+            if (usage) {
+                console.log(`Memory: ${usage.used}MB / ${usage.total}MB (Limit: ${usage.limit}MB)`);
+                
+                // Alert if memory usage is high
+                if (usage.used > usage.limit * 0.8) {
+                    console.warn('High memory usage detected!');
+                    KasOS.system.triggerGarbageCollection();
+                }
+            }
+        }, 10000); // Check every 10 seconds
+    }
+}</code></pre>
+
+                <h2>Best Practices</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">Memory Leak Prevention</h3>
+                    <ul>
+                        <li>Always clean up event listeners when components are destroyed</li>
+                        <li>Use weak maps for component caching</li>
+                        <li>Clear timers and intervals on component unmount</li>
+                        <li>Avoid circular references in object structures</li>
+                        <li>Regularly audit large data structures</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="performance-rendering">
+                <h1>🎨 Rendering Optimization</h1>
+                <p>Efficient rendering is crucial for smooth user experience in KasOS. This section covers techniques for optimizing UI rendering and animations.</p>
+
+                <h2>Virtual DOM Implementation</h2>
+                <pre><code class="language-js">// Virtual DOM for efficient updates
+class VirtualDOM {
+    constructor() {
+        this.tree = null;
+    }
+    
+    createElement(type, props = {}, ...children) {
+        return {
+            type,
+            props,
+            children: children.flat()
+        };
+    }
+    
+    diff(oldTree, newTree) {
+        const patches = [];
+        this.diffNodes(oldTree, newTree, 0, patches);
+        return patches;
+    }
+    
+    patch(container, patches) {
+        patches.forEach(patch => {
+            switch (patch.type) {
+                case 'CREATE':
+                    container.appendChild(this.render(patch.node));
+                    break;
+                case 'REMOVE':
+                    container.removeChild(container.childNodes[patch.index]);
+                    break;
+                case 'REPLACE':
+                    container.replaceChild(
+                        this.render(patch.node),
+                        container.childNodes[patch.index]
+                    );
+                    break;
+                case 'UPDATE':
+                    this.updateElement(container.childNodes[patch.index], patch.props);
+                    break;
+            }
+        });
+    }
+}</code></pre>
+
+                <h2>CSS Performance Optimization</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">CSS Best Practices</h3>
+                    <ul>
+                        <li><strong>CSS3 Transforms:</strong> Use transform and opacity for animations</li>
+                        <li><strong>Avoid Layout Thrashing:</strong> Batch DOM reads and writes</li>
+                        <li><strong>Efficient Selectors:</strong> Use specific, performant CSS selectors</li>
+                        <li><strong>Critical CSS:</strong> Inline critical CSS for faster first paint</li>
+                        <li><strong>GPU Acceleration:</strong> Use will-change property for animated elements</li>
+                    </ul>
+                </div>
+
+                <h2>Animation Optimization</h2>
+                <pre><code class="language-css">/* Use transform and opacity for 60fps animations */
+.smooth-animation {
+    will-change: transform, opacity;
+    transform: translateZ(0); /* Force GPU layer */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Avoid animating layout properties */
+.avoid-this {
+    transition: width 0.3s ease; /* BAD - causes layout */
+}
+
+.prefer-this {
+    transition: transform 0.3s ease; /* GOOD - composited */
+}</code></pre>
+            </section>
+
+            <section id="performance-js">
+                <h1>⚡ JavaScript Optimization</h1>
+                <p>JavaScript performance is critical for responsive KasOS applications. This section covers code optimization techniques and execution efficiency.</p>
+                
+                <h2>Code Splitting & Bundling</h2>
+                <pre><code class="language-js">// Dynamic imports for code splitting
+const loadAppModule = async (appName) => {
+    try {
+        const module = await import(`./apps/${appName}.js`);
+        return module.default;
+    } catch (error) {
+        console.error(`Failed to load ${appName}:`, error);
+        return null;
+    }
+};
+
+// Tree shaking example - only export what you need
+export { 
+    windowManager,
+    desktopEnvironment 
+} from './core';
+
+// Avoid exporting everything
+// export * from './core'; // BAD - includes unused code</code></pre>
+
+                <h2>Event Optimization</h2>
+                <pre><code class="language-js">// Debouncing expensive operations
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Throttling for scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Usage examples
+const debouncedSearch = debounce(performSearch, 300);
+const throttledScroll = throttle(updateScrollPosition, 16); // ~60fps</code></pre>
+
+                <h2>Web Workers for Heavy Tasks</h2>
+                <pre><code class="language-js">// Offload heavy computations to Web Workers
+class WorkerPool {
+    constructor(workerScript, poolSize = 4) {
+        this.workers = [];
+        this.taskQueue = [];
+        
+        for (let i = 0; i < poolSize; i++) {
+            this.workers.push({
+                worker: new Worker(workerScript),
+                busy: false
+            });
+        }
+    }
+    
+    async executeTask(data) {
+        return new Promise((resolve, reject) => {
+            const availableWorker = this.workers.find(w => !w.busy);
+            
+            if (availableWorker) {
+                availableWorker.busy = true;
+                availableWorker.worker.postMessage(data);
+                availableWorker.worker.onmessage = (e) => {
+                    availableWorker.busy = false;
+                    resolve(e.data);
+                };
+            } else {
+                this.taskQueue.push({ data, resolve, reject });
+            }
+        });
+    }
+}</code></pre>
+            </section>
+
+            <section id="performance-monitoring">
+                <h1>📊 Performance Monitoring</h1>
+                <p>Real-time monitoring and analytics are essential for maintaining optimal KasOS performance. This section covers built-in tools and custom metrics.</p>
+                
+                <h2>Built-in Performance Tools</h2>
+                <p>KasOS includes comprehensive performance monitoring tools accessible via the Dev Tools suite:</p>
+                <ul>
+                    <li><strong>Real-time Metrics:</strong> Monitor CPU, memory, and network usage</li>
+                    <li><strong>Performance Timeline:</strong> Track frame rates and rendering performance</li>
+                    <li><strong>Memory Profiler:</strong> Identify memory leaks and optimization opportunities</li>
+                    <li><strong>Network Monitor:</strong> Analyze network requests and caching effectiveness</li>
+                    <li><strong>App Performance:</strong> Per-application performance metrics</li>
+                </ul>
+
+                <h2>Custom Performance Metrics</h2>
+                <pre><code class="language-js">// Performance measurement utilities
+class PerformanceMonitor {
+    static measureFunction(fn, name) {
+        const start = performance.now();
+        const result = fn();
+        const end = performance.now();
+        console.log(`${name} took ${end - start} milliseconds`);
+        return result;
+    }
+    
+    static trackFrameRate() {
+        let frames = 0;
+        let lastTime = performance.now();
+        
+        function update() {
+            frames++;
+            const currentTime = performance.now();
+            
+            if (currentTime >= lastTime + 1000) {
+                const fps = Math.round((frames * 1000) / (currentTime - lastTime));
+                KasOS.system.updateMetric('fps', fps);
+                
+                // Log warning for low FPS
+                if (fps < 30) {
+                    console.warn(`Low FPS detected: ${fps}`);
+                }
+                
+                frames = 0;
+                lastTime = currentTime;
+            }
+            
+            requestAnimationFrame(update);
+        }
+        
+        update();
+    }
+    
+    static trackLongTasks() {
+        // Monitor for JavaScript long tasks (>50ms)
+        const observer = new PerformanceObserver((list) => {
+            for (const entry of list.getEntries()) {
+                if (entry.duration > 50) {
+                    console.warn(`Long task detected: ${entry.duration}ms`);
+                    KasOS.system.reportLongTask(entry);
+                }
+            }
+        });
+        
+        observer.observe({ entryTypes: ['longtask'] });
+    }
+}</code></pre>
+
+                <h2>Performance Dashboard</h2>
+                <div style="background: #1a093b; padding: 1.5rem; border-radius: 12px; border: 1px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">Real-time Metrics Display</h3>
+                    <p>Access the performance dashboard through Dev Tools → Performance tab to view:</p>
+                    <ul>
+                        <li>Memory usage graphs and trends</li>
+                        <li>CPU utilization by application</li>
+                        <li>Network request waterfall charts</li>
+                        <li>Frame rate monitoring with alerts</li>
+                        <li>App startup and execution times</li>
+                        <li>Storage usage and cache efficiency</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="performance-network">
+                <h1>🌐 Network & Caching</h1>
+                <p>Efficient network usage and caching strategies are crucial for KasOS performance, especially for web-based applications.</p>
+                
+                <h2>Service Worker Implementation</h2>
+                <pre><code class="language-js">// Efficient caching strategy
+const CACHE_NAME = 'kasos-v1.2.0';
+const STATIC_CACHE = 'kasos-static-v1';
+const DYNAMIC_CACHE = 'kasos-dynamic-v1';
+
+const urlsToCache = [
+    '/',
+    '/system.js',
+    '/styles_clean.css',
+    '/icons/kasos-icon-192.png',
+    '/applications/core-apps.bundle.js'
+];
+
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open(STATIC_CACHE)
+            .then(cache => cache.addAll(urlsToCache))
+            .then(() => self.skipWaiting())
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                if (response) {
+                    return response;
+                }
+                
+                return fetch(event.request)
+                    .then(fetchResponse => {
+                        // Cache dynamic content
+                        if (event.request.url.includes('/applications/')) {
+                            const responseClone = fetchResponse.clone();
+                            caches.open(DYNAMIC_CACHE)
+                                .then(cache => cache.put(event.request, responseClone));
+                        }
+                        return fetchResponse;
+                    });
+            })
+    );
+});</code></pre>
+
+                <h2>Resource Loading Optimization</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">Loading Strategies</h3>
+                    <ul>
+                        <li><strong>Critical Path:</strong> Prioritize above-the-fold content</li>
+                        <li><strong>Preloading:</strong> Use link rel="preload" for critical resources</li>
+                        <li><strong>Lazy Loading:</strong> Defer non-critical resources</li>
+                        <li><strong>CDN Usage:</strong> Leverage content delivery networks</li>
+                        <li><strong>Compression:</strong> Enable gzip/brotli compression</li>
+                        <li><strong>Bundle Splitting:</strong> Separate vendor and app code</li>
+                    </ul>
+                </div>
+
+                <h2>Best Practices Summary</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">Performance Checklist</h3>
+                    <ul>
+                        <li>✅ <strong>Bundle Optimization:</strong> Use code splitting and tree shaking</li>
+                        <li>✅ <strong>Image Optimization:</strong> Use WebP format and lazy loading</li>
+                        <li>✅ <strong>Caching Strategy:</strong> Implement service workers for offline support</li>
+                        <li>✅ <strong>Event Throttling:</strong> Debounce expensive operations</li>
+                        <li>✅ <strong>Worker Threads:</strong> Offload heavy computations to Web Workers</li>
+                        <li>✅ <strong>Memory Management:</strong> Regular cleanup and weak references</li>
+                        <li>✅ <strong>CSS Optimization:</strong> Use transform/opacity for animations</li>
+                        <li>✅ <strong>Critical Path:</strong> Optimize above-the-fold content loading</li>
+                    </ul>
+                </div>
+                
+                <h2>🔧 Performance Troubleshooting</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">Common Performance Issues</h3>
+                    <ul>
+                        <li><strong>Slow App Loading:</strong> Check for large bundle sizes and enable code splitting</li>
+                        <li><strong>Memory Leaks:</strong> Use Dev Tools memory profiler to identify retained objects</li>
+                        <li><strong>Janky Animations:</strong> Ensure animations use transform/opacity properties</li>
+                        <li><strong>Network Bottlenecks:</strong> Review network tab for slow or failing requests</li>
+                        <li><strong>DOM Manipulation:</strong> Batch DOM updates and use document fragments</li>
+                        <li><strong>High CPU Usage:</strong> Profile JavaScript execution and optimize hot paths</li>
+                        <li><strong>Cache Misses:</strong> Review caching strategy and cache invalidation logic</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="maintenance-guide">
+                <h1>🔧 Maintenance Guide</h1>
+                <p>This section provides guidelines for maintaining and updating the KasOS documentation on a daily basis.</p>
+                
+                <h2>📝 Daily Documentation Tasks</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">Routine Maintenance</h3>
+                    <ul>
+                        <li><strong>Content Review:</strong> Check for outdated information and broken links</li>
+                        <li><strong>Code Examples:</strong> Verify code samples are current and functional</li>
+                        <li><strong>Screenshots:</strong> Update screenshots when UI changes occur</li>
+                        <li><strong>Version Information:</strong> Update version numbers and compatibility info</li>
+                        <li><strong>FAQ Updates:</strong> Add new frequently asked questions</li>
+                        <li><strong>Performance Notes:</strong> Document any performance improvements or issues</li>
+                    </ul>
+                </div>
+                
+                <h2>📚 Content Organization</h2>
+                
+                <h3>Section Structure Guidelines</h3>
+                <ul>
+                    <li><strong>Logical Flow:</strong> Arrange content from basic to advanced</li>
+                    <li><strong>Cross-References:</strong> Link related sections and topics</li>
+                    <li><strong>Code Examples:</strong> Include practical, working examples</li>
+                    <li><strong>Visual Hierarchy:</strong> Use consistent heading levels and formatting</li>
+                    <li><strong>Search Optimization:</strong> Use clear, searchable section titles</li>
+                </ul>
+
+                <h3>When to Split Sections</h3>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h4 style="color: #ff00cc; margin-top: 0;">Breaking Point Indicators</h4>
+                    <ul>
+                        <li><strong>Length:</strong> Sections over 200 lines should be considered for splitting</li>
+                        <li><strong>Complexity:</strong> Multiple unrelated subtopics in one section</li>
+                        <li><strong>User Flow:</strong> Different user types need different information levels</li>
+                        <li><strong>Maintenance:</strong> If updates frequently affect only part of a section</li>
+                        <li><strong>Navigation:</strong> Users spend too much time scrolling to find specific info</li>
+                    </ul>
+                </div>
+
+                <h2>🔄 Update Procedures</h2>
+                
+                <h3>Quick Update Checklist</h3>
+                <ol>
+                    <li>✅ <strong>Backup Current Version:</strong> Always backup before major changes</li>
+                    <li>✅ <strong>Update Content:</strong> Make your content changes</li>
+                    <li>✅ <strong>Update TOC:</strong> Ensure table of contents reflects changes</li>
+                    <li>✅ <strong>Test Links:</strong> Verify all internal and external links work</li>
+                    <li>✅ <strong>Check Formatting:</strong> Ensure consistent styling and formatting</li>
+                    <li>✅ <strong>Update Timestamps:</strong> Modify "last updated" information</li>
+                    <li>✅ <strong>Review Mobile:</strong> Check responsive design and mobile experience</li>
+                    <li>✅ <strong>Test Search:</strong> Verify search functionality works with new content</li>
+                </ol>
+
+                <h3>Major Update Process</h3>
+                <pre><code class="language-bash"># Documentation update workflow
+git checkout -b docs-update-$(date +%Y%m%d)
+# Make your changes
+git add kas-io/documentation/index.html
+git commit -m "docs: Update [section] with [brief description]"
+git push origin docs-update-$(date +%Y%m%d)
+# Create pull request for review</code></pre>
+
+                <h2>🎨 Style Guidelines</h2>
+                
+                <h3>Cyberpunk Theme Consistency</h3>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <h4 style="color: #00fff7; margin-top: 0;">Color Usage</h4>
+                    <ul>
+                        <li><strong>Primary Accent:</strong> #00ff88 (green) for success and primary actions</li>
+                        <li><strong>Secondary Accent:</strong> #00fff7 (cyan) for links and secondary info</li>
+                        <li><strong>Warning/Highlight:</strong> #ff00cc (magenta) for warnings and emphasis</li>
+                        <li><strong>Background Variants:</strong> #1a093b, #2d0b45, #0a2d45 for different sections</li>
+                        <li><strong>Text Colors:</strong> Maintain contrast ratios for accessibility</li>
+                    </ul>
+                </div>
+
+                <h3>Emoji Usage Guidelines</h3>
+                <ul>
+                    <li><strong>Section Headers:</strong> Use relevant emojis for easy visual identification</li>
+                    <li><strong>Navigation:</strong> Consistent emoji usage in sidebar and TOC</li>
+                    <li><strong>Status Indicators:</strong> ✅ for complete, 🔄 for in progress, ⚠️ for warnings</li>
+                    <li><strong>Content Types:</strong> 📝 for docs, 🔧 for tools, 🚀 for features, etc.</li>
+                </ul>
+
+                <h2>📊 Analytics & Feedback</h2>
+                
+                <h3>Content Performance Tracking</h3>
+                <ul>
+                    <li><strong>User Feedback:</strong> Monitor Discord and GitHub for documentation issues</li>
+                    <li><strong>Search Analytics:</strong> Track commonly searched terms</li>
+                    <li><strong>Section Usage:</strong> Identify most and least visited sections</li>
+                    <li><strong>Update Frequency:</strong> Track which sections need frequent updates</li>
+                </ul>
+
+                <h3>Improvement Opportunities</h3>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h4 style="color: #0f0; margin-top: 0;">Regular Review Items</h4>
+                    <ul>
+                        <li><strong>Missing Content:</strong> Identify gaps in documentation coverage</li>
+                        <li><strong>Outdated Examples:</strong> Update code samples and screenshots</li>
+                        <li><strong>User Questions:</strong> Convert frequent support questions into documentation</li>
+                        <li><strong>Accessibility:</strong> Ensure documentation is accessible to all users</li>
+                        <li><strong>Mobile Experience:</strong> Optimize for mobile and tablet viewing</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="update-procedures">
+                <h1>📋 Update Procedures</h1>
+                <p>Standardized procedures for maintaining and updating KasOS documentation efficiently.</p>
+                
+                <h2>🚀 Quick Updates (Daily)</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">5-Minute Updates</h3>
+                    <ul>
+                        <li><strong>Fix Typos:</strong> Correct spelling and grammar errors</li>
+                        <li><strong>Update Links:</strong> Fix broken internal/external links</li>
+                        <li><strong>Add FAQ Items:</strong> Add new frequently asked questions</li>
+                        <li><strong>Version Numbers:</strong> Update version references</li>
+                        <li><strong>Status Updates:</strong> Change "in progress" to "complete" status</li>
+                    </ul>
+                </div>
+
+                <h2>🔧 Medium Updates (Weekly)</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">30-Minute Updates</h3>
+                    <ul>
+                        <li><strong>New Features:</strong> Document new KasOS features</li>
+                        <li><strong>Code Examples:</strong> Add or update code samples</li>
+                        <li><strong>Screenshots:</strong> Update UI screenshots</li>
+                        <li><strong>Troubleshooting:</strong> Add new troubleshooting solutions</li>
+                        <li><strong>Performance Tips:</strong> Add new optimization techniques</li>
+                    </ul>
+                </div>
+
+                <h2>🏗️ Major Updates (Monthly)</h2>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">2-Hour Updates</h3>
+                    <ul>
+                        <li><strong>New Sections:</strong> Add entirely new documentation sections</li>
+                        <li><strong>Reorganization:</strong> Restructure existing content for better flow</li>
+                        <li><strong>Comprehensive Review:</strong> Full review of all content for accuracy</li>
+                        <li><strong>Mobile Optimization:</strong> Improve mobile experience</li>
+                        <li><strong>Accessibility Audit:</strong> Ensure accessibility compliance</li>
+                    </ul>
+                </div>
+
+                <h2>📝 Content Templates</h2>
+                
+                <h3>New Feature Documentation Template</h3>
+                <pre><code class="language-html">## 🆕 [Feature Name]
+[Brief description of the feature]
+
+### Key Benefits
+- **Benefit 1:** Description
+- **Benefit 2:** Description
+- **Benefit 3:** Description
+
+### How to Use
+1. Step 1
+2. Step 2
+3. Step 3
+
+### Code Example
+```javascript
+// Practical example
+const example = 'code here';
+```
+
+### Related Features
+- [Link to related feature 1](#link)
+- [Link to related feature 2](#link)</code></pre>
+
+                <h3>API Documentation Template</h3>
+                <pre><code class="language-html">### `methodName(parameters)`
+Description of what the method does.
+
+**Parameters:**
+- `param1` (type): Description
+- `param2` (type, optional): Description
+
+**Returns:** Description of return value
+
+**Example:**
+```javascript
+const result = api.methodName(param1, param2);
+console.log(result);
+```</code></pre>
+
+                <h2>🔍 Quality Assurance</h2>
+                
+                <h3>Pre-Publication Checklist</h3>
+                <ol>
+                    <li>✅ <strong>Spell Check:</strong> Run spell check on all new content</li>
+                    <li>✅ <strong>Link Validation:</strong> Test all new links</li>
+                    <li>✅ <strong>Code Testing:</strong> Verify all code examples work</li>
+                    <li>✅ <strong>Mobile View:</strong> Check appearance on mobile devices</li>
+                    <li>✅ <strong>Browser Testing:</strong> Test in Chrome, Firefox, Safari</li>
+                    <li>✅ <strong>Accessibility:</strong> Check color contrast and screen reader compatibility</li>
+                    <li>✅ <strong>Navigation:</strong> Ensure TOC and sidebar are updated</li>
+                    <li>✅ <strong>Search:</strong> Test that new content appears in search results</li>
+                </ol>
+
+                <h3>Post-Publication Monitoring</h3>
+                <ul>
+                    <li><strong>User Feedback:</strong> Monitor for user reports of issues</li>
+                    <li><strong>Analytics:</strong> Track page views and user behavior</li>
+                    <li><strong>Performance:</strong> Monitor page load times</li>
+                    <li><strong>Search Rankings:</strong> Check if content appears in search results</li>
+                </ul>
+            </section>
+
+            <section id="contributing">
+                <h1>🤝 Contributing</h1>
+                
+                <h2>How to Contribute</h2>
+                <p>We welcome contributions from the community! Here's how you can help:</p>
+                
+                <h3>Development Contributions</h3>
+                <ol>
+                    <li><strong>Fork the Repository:</strong> Create your own fork of the KasOS repository</li>
+                    <li><strong>Create a Branch:</strong> Make a feature branch for your changes</li>
+                    <li><strong>Make Changes:</strong> Implement your feature or bug fix</li>
+                    <li><strong>Test Thoroughly:</strong> Ensure all tests pass and add new tests if needed</li>
+                    <li><strong>Submit PR:</strong> Create a pull request with a clear description</li>
+                </ol>
+
+                <h3>Code Standards</h3>
+                <ul>
+                    <li><strong>JavaScript:</strong> Use ES6+ features, follow ESLint configuration</li>
+                    <li><strong>CSS:</strong> Use CSS custom properties, follow BEM methodology</li>
+                    <li><strong>Documentation:</strong> Document all public APIs and complex logic</li>
+                    <li><strong>Testing:</strong> Maintain >90% code coverage</li>
+                </ul>
+
+                <h3>App Development</h3>
+                <ul>
+                    <li><strong>Create Apps:</strong> Build apps using the KasOS framework</li>
+                    <li><strong>Share Templates:</strong> Contribute app templates for others</li>
+                    <li><strong>Improve APIs:</strong> Suggest and implement API improvements</li>
+                    <li><strong>Write Tutorials:</strong> Help others learn KasOS development</li>
+                </ul>
+
+                <h3>Community Support</h3>
+                <ul>
+                    <li><strong>Answer Questions:</strong> Help users in forums and Discord</li>
+                    <li><strong>Report Bugs:</strong> Submit detailed bug reports with reproductions</li>
+                    <li><strong>Suggest Features:</strong> Propose new features and improvements</li>
+                    <li><strong>Translate:</strong> Help translate KasOS to other languages</li>
+                </ul>
+
+                <h2>Development Setup</h2>
+                <pre><code class="language-bash"># Clone and setup
+git clone https://github.com/kasos-io/kasos.git
+cd kasos
+npm install
+
+# Run development server
+npm run dev
+
+# Run tests
+npm test
+
+# Build for production
+npm run build
+
+# Lint code
+npm run lint</code></pre>
+
+                <h2>Contribution Guidelines</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">📋 Guidelines</h3>
+                    <ul>
+                        <li><strong>Code Quality:</strong> Follow established patterns and conventions</li>
+                        <li><strong>Security:</strong> Security considerations must be documented</li>
+                        <li><strong>Performance:</strong> Consider performance impact of changes</li>
+                        <li><strong>Compatibility:</strong> Maintain backward compatibility when possible</li>
+                        <li><strong>Documentation:</strong> Update docs for any user-facing changes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="support">
+                <h1>💬 Support & FAQ</h1>
+                
+                <h2>Getting Help</h2>
+                <ul>
+                    <li><strong>Documentation:</strong> Check this documentation first</li>
+                    <li><strong>GitHub Issues:</strong> Search existing issues or create a new one</li>
+                    <li><strong>Discord Community:</strong> Join our Discord server for real-time help</li>
+                    <li><strong>Stack Overflow:</strong> Use the 'kasos' tag for technical questions</li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+                
+                <h3>Q: Can I use KasOS offline?</h3>
+                <p><strong>A:</strong> Yes! KasOS supports offline mode through service workers. Once loaded, most functionality works without an internet connection. Some features like crypto transactions require network access.</p>
+
+                <h3>Q: Is my data secure in KasOS?</h3>
+                <p><strong>A:</strong> Yes. KasOS uses multiple security layers including app sandboxing, encrypted storage, and WASM isolation. Your private keys and sensitive data never leave your browser.</p>
+
+                <h3>Q: How do I backup my KasOS data?</h3>
+                <p><strong>A:</strong> Use the Settings app to export your data, including apps, files, and configurations. You can also sync with external storage services.</p>
+
+                <h3>Q: Can I develop apps for KasOS?</h3>
+                <p><strong>A:</strong> Absolutely! KasOS provides a comprehensive development framework. See the <a href="#app-development">App Development</a> section to get started.</p>
+
+                <h3>Q: What browsers support KasOS?</h3>
+                <p><strong>A:</strong> KasOS works on Chrome 90+, Firefox 88+, Safari 14+, and Edge 90+. We recommend Chrome or Firefox for the best experience.</p>
+
+                <h3>Q: How do I report bugs?</h3>
+                <p><strong>A:</strong> Report bugs on our GitHub repository with:
+                <ul>
+                    <li>Steps to reproduce the issue</li>
+                    <li>Expected vs actual behavior</li>
+                    <li>Browser and version information</li>
+                    <li>Console error messages if any</li>
+                </ul>
+
+                <h3>Q: Can I customize the KasOS interface?</h3>
+                <p><strong>A:</strong> Yes! KasOS supports themes, custom wallpapers, and layout customization. Advanced users can also create custom themes and UI modifications.</p>
+
+                <h2>Contact Information</h2>
+                <div style="background: #2d0b45; padding: 1.5rem; border-radius: 12px; border: 1px solid #00fff7; margin: 1rem 0;">
+                    <h3 style="color: #00fff7; margin-top: 0;">📞 Get in Touch</h3>
+                    <ul>
+                        <li><strong>Website:</strong> <a href="https://kasos.io" target="_blank">kasos.io</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/kasos-io/kasos" target="_blank">github.com/kasos-io/kasos</a></li>
+                        <li><strong>Discord:</strong> <a href="https://discord.gg/kasos" target="_blank">discord.gg/kasos</a></li>
+                        <li><strong>Email:</strong> support@kasos.io</li>
+                        <li><strong>Twitter:</strong> <a href="https://twitter.com/kasos_io" target="_blank">@kasos_io</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section id="versions-releases">
+                <h1>Versions & Releases</h1>
+                <p>
+        Here you can find the history of KasOS releases, including major features and improvements introduced in each version. Stay up to date with the latest enhancements and fixes as KasOS evolves.
+    </p>
+    <table style="width:100%;border-collapse:separate;border-spacing:0 8px;margin:1.5rem 0;background:#23113a;border-radius:12px;overflow:hidden;box-shadow:0 0 16px #00fff733;">
+        <thead>
+            <tr style="background:#2d0b45;">
+                <th style="text-align:left;padding:12px 10px;border-bottom:2px solid #ff00cc;color:#00fff7;font-size:1.1em;">Version</th>
+                <th style="text-align:left;padding:12px 10px;border-bottom:2px solid #ff00cc;color:#00fff7;font-size:1.1em;">Release Date</th>
+                <th style="text-align:left;padding:12px 10px;border-bottom:2px solid #ff00cc;color:#00fff7;font-size:1.1em;">Highlights</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background:#1a093b;">
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">v1.2.0</td>
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">2025-07-01</td>
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">
+                    <ul style="margin:0 0 0 1.2em;padding:0;list-style:disc;">
+                        <li>Launched this documentation site</li>
+                        <li>Enhanced security features</li>
+                        <li>New app manager capabilities</li>
+                        <li>UI/UX improvements</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="background:#1a093b;">
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">v1.1.0</td>
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">2025-06-15</td>
+                <td style="padding:10px 10px;border-bottom:1px solid #31204a;">
+                    <ul style="margin:0 0 0 1.2em;padding:0;list-style:disc;">
+                        <li>Integrated KasWallet for cryptocurrency management</li>
+                        <li>Added multi-desktop support</li>
+                        <li>General bug fixes and optimizations</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr style="background:#1a093b;">
+                <td style="padding:10px 10px;">v1.0.0</td>
+                <td style="padding:10px 10px;">2025-05-01</td>
+                <td style="padding:10px 10px;">
+                    <ul style="margin:0 0 0 1.2em;padding:0;list-style:disc;">
+                        <li>Initial public release of KasOS</li>
+                        <li>Core desktop environment and built-in apps</li>
+                        <li>Window management and app system</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section id="error-handling">
+                <h1>🚨 Error Handling</h1>
+                <p>KasOS includes comprehensive error handling and debugging tools to help you diagnose and fix issues quickly.</p>
+                
+                <h2>Error System</h2>
+                <ul>
+                    <li><strong>Global Error Handler:</strong> Catches and logs all uncaught errors</li>
+                    <li><strong>Error Categorization:</strong> Automatically categorizes errors by type and severity</li>
+                    <li><strong>Stack Trace Analysis:</strong> Provides detailed stack traces with source mapping</li>
+                    <li><strong>Error Recovery:</strong> Attempts automatic recovery for common errors</li>
+                </ul>
+                
+                <h2>Debug Console</h2>
+                <p>The debug console provides real-time monitoring and debugging capabilities:</p>
+                <ul>
+                    <li><strong>Real-time Logs:</strong> View all system logs in real-time</li>
+                    <li><strong>Error Filtering:</strong> Filter by error type, severity, or source</li>
+                    <li><strong>Interactive Commands:</strong> Execute debug commands directly</li>
+                    <li><strong>Performance Metrics:</strong> Monitor system performance indicators</li>
+                </ul>
+                
+                <h2>Common Error Solutions</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <h3 style="color: #ff00cc; margin-top: 0;">Quick Fixes</h3>
+                    <ul>
+                        <li><strong>App Won't Load:</strong> Check browser console for JavaScript errors</li>
+                        <li><strong>Performance Issues:</strong> Clear cache and restart KasOS</li>
+                        <li><strong>Settings Not Saving:</strong> Check browser storage permissions</li>
+                        <li><strong>Network Errors:</strong> Verify internet connection and firewall settings</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="changelog">
+                <h1>📝 Changelog</h1>
+                <p>Track all changes, improvements, and bug fixes in KasOS releases.</p>
+                
+                <h2>Version 1.2.0 (Latest)</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <h3 style="color: #0f0; margin-top: 0;">🚀 New Features</h3>
+                    <ul>
+                        <li>Enhanced Dev Tools suite with comprehensive debugging</li>
+                        <li>AI-powered code assistance and error analysis</li>
+                        <li>Improved WASM sandbox security</li>
+                        <li>Advanced performance monitoring</li>
+                        <li>Extended keyboard shortcut system</li>
+                    </ul>
+                    
+                    <h3 style="color: #00fff7; margin-top: 1rem;">🔧 Improvements</h3>
+                    <ul>
+                        <li>Faster app loading with code splitting</li>
+                        <li>Better memory management</li>
+                        <li>Enhanced error reporting</li>
+                        <li>Improved documentation</li>
+                        <li>Better mobile responsiveness</li>
+                    </ul>
+                    
+                    <h3 style="color: #ff00cc; margin-top: 1rem;">🐛 Bug Fixes</h3>
+                    <ul>
+                        <li>Fixed window management edge cases</li>
+                        <li>Resolved settings persistence issues</li>
+                        <li>Fixed crypto integration stability</li>
+                        <li>Corrected theme switching bugs</li>
+                    </ul>
+                </div>
+                
+                <h2>Version 1.1.0</h2>
+                <ul>
+                    <li>Added Kasia Messenger application</li>
+                    <li>Improved file manager functionality</li>
+                    <li>Enhanced security features</li>
+                    <li>Better error handling</li>
+                </ul>
+                
+                <h2>Version 1.0.0</h2>
+                <ul>
+                    <li>Initial release of KasOS</li>
+                    <li>Core desktop environment</li>
+                    <li>Basic application suite</li>
+                    <li>Cryptocurrency integration</li>
+                </ul>
+            </section>
+
+            <section id="roadmap">
+                <h1>🗺️ Roadmap</h1>
+                <p>Our vision for the future of KasOS development.</p>
+                
+                <h2>📅 Short Term (Q2 2024)</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <ul>
+                        <li>🔄 <strong>Enhanced AI Integration:</strong> More intelligent code assistance</li>
+                        <li>🎨 <strong>Theme System Expansion:</strong> More customization options</li>
+                        <li>📱 <strong>Mobile Optimization:</strong> Better mobile experience</li>
+                        <li>🔐 <strong>Security Hardening:</strong> Additional security layers</li>
+                        <li>🌐 <strong>Multi-language Support:</strong> Internationalization</li>
+                    </ul>
+                </div>
+                
+                <h2>📅 Medium Term (Q3-Q4 2024)</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <ul>
+                        <li>☁️ <strong>Cloud Integration:</strong> Sync settings and files across devices</li>
+                        <li>🏢 <strong>Collaboration Tools:</strong> Multi-user workspace features</li>
+                        <li>🔌 <strong>Plugin Ecosystem:</strong> Third-party plugin support</li>
+                        <li>📊 <strong>Analytics Dashboard:</strong> Usage insights and performance metrics</li>
+                        <li>🛡️ <strong>Enterprise Features:</strong> Advanced security and management</li>
+                    </ul>
+                </div>
+                
+                <h2>📅 Long Term (2025+)</h2>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <ul>
+                        <li>🤖 <strong>Advanced AI:</strong> Natural language interface</li>
+                        <li>🌍 <strong>Decentralized Features:</strong> Blockchain integration</li>
+                        <li>📱 <strong>Native Apps:</strong> Desktop and mobile clients</li>
+                        <li>🎮 <strong>Gaming Platform:</strong> Integrated gaming environment</li>
+                        <li>🏛️ <strong>Metaverse Ready:</strong> 3D workspace capabilities</li>
+                    </ul>
+                </div>
+                
+                <h2>🎯 Community Priorities</h2>
+                <p>Features most requested by the community:</p>
+                <ol>
+                    <li><strong>Better Documentation:</strong> More tutorials and examples</li>
+                    <li><strong>Performance Improvements:</strong> Faster loading and smoother animations</li>
+                    <li><strong>More Apps:</strong> Additional built-in applications</li>
+                    <li><strong>Customization Options:</strong> More themes and personalization</li>
+                    <li><strong>Stability Fixes:</strong> Bug fixes and reliability improvements</li>
+                </ol>
+            </section>
+
+            <section id="support-faq">
+                <h1>❓ Support & FAQ</h1>
+                
+                <h2>Frequently Asked Questions</h2>
+                
+                <h3>🚀 Getting Started</h3>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>Q: How do I start using KasOS?</strong></p>
+                    <p>A: Simply navigate to the KasOS URL in your web browser. No installation required! KasOS works in all modern browsers.</p>
+                    
+                    <p><strong>Q: Do I need to create an account?</strong></p>
+                    <p>A: No, KasOS works without an account. However, creating an account allows you to sync settings across devices.</p>
+                    
+                    <p><strong>Q: Which browsers are supported?</strong></p>
+                    <p>A: KasOS works best in Chrome, Firefox, Safari, and Edge. Internet Explorer is not supported.</p>
+                </div>
+                
+                <h3>🔧 Technical Issues</h3>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>Q: KasOS won't load or appears broken</strong></p>
+                    <p>A: Try clearing your browser cache, disabling browser extensions, or switching to an incognito/private window.</p>
+                    
+                    <p><strong>Q: My settings aren't being saved</strong></p>
+                    <p>A: Check that your browser allows local storage and that you're not in private browsing mode.</p>
+                    
+                    <p><strong>Q: Applications are loading slowly</strong></p>
+                    <p>A: This could be due to network connectivity or browser performance. Try refreshing the page or closing other browser tabs.</p>
+                </div>
+                
+                <h3>💻 Development</h3>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                    <p><strong>Q: How do I create custom applications?</strong></p>
+                    <p>A: See the <a href="#app-development" style="color: #00fff7;">App Development</a> section for detailed tutorials and examples.</p>
+                    
+                    <p><strong>Q: Can I contribute to KasOS?</strong></p>
+                    <p>A: Yes! Check out our <a href="#contributing" style="color: #00fff7;">Contributing</a> guide to get started.</p>
+                    
+                    <p><strong>Q: Where can I report bugs?</strong></p>
+                    <p>A: Report bugs on our GitHub repository or Discord server. Please include detailed reproduction steps.</p>
+                </div>
+                
+                <h2>Getting Help</h2>
+                
+                <h3>📞 Contact Methods</h3>
+                <ul>
+                    <li><strong>Discord:</strong> Join our community Discord for real-time support</li>
+                    <li><strong>GitHub Issues:</strong> Report bugs and feature requests</li>
+                    <li><strong>Documentation:</strong> Search this documentation for answers</li>
+                    <li><strong>Email:</strong> Contact us at support@kasos.io</li>
+                </ul>
+                
+                <h3>🎯 Before Asking for Help</h3>
+                <ol>
+                    <li>Search this documentation</li>
+                    <li>Check the FAQ section</li>
+                    <li>Look through existing GitHub issues</li>
+                    <li>Try basic troubleshooting steps</li>
+                    <li>Prepare a clear description of your issue</li>
+                </ol>
+                
+                <h2>Community Guidelines</h2>
+                <ul>
+                    <li><strong>Be Respectful:</strong> Treat all community members with respect</li>
+                    <li><strong>Stay On Topic:</strong> Keep discussions relevant to KasOS</li>
+                    <li><strong>Help Others:</strong> Share your knowledge and assist newcomers</li>
+                    <li><strong>Follow Rules:</strong> Adhere to platform-specific rules and guidelines</li>
+                </ul>
+            </section>
+
+            <section id="quick-start-checklist">
+                <h1>✅ Quick Start Checklist</h1>
+                <p>Essential steps to get productive with KasOS quickly.</p>
+                
+                <h2>🚀 First Launch (5 minutes)</h2>
+                <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border-left: 4px solid #0f0; margin: 1rem 0;">
+                    <input type="checkbox" id="task1"> <label for="task1">Open KasOS in your browser</label><br>
+                    <input type="checkbox" id="task2"> <label for="task2">Explore the desktop environment</label><br>
+                    <input type="checkbox" id="task3"> <label for="task3">Open the Start Menu and browse applications</label><br>
+                    <input type="checkbox" id="task4"> <label for="task4">Try resizing and moving windows</label><br>
+                    <input type="checkbox" id="task5"> <label for="task5">Check out the Settings app for customization</label>
+                </div>
+                
+                <h2>🔧 Basic Setup (10 minutes)</h2>
+                <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border-left: 4px solid #ff00cc; margin: 1rem 0;">
+                    <input type="checkbox" id="setup1"> <label for="setup1">Configure your preferred theme and colors</label><br>
+                    <input type="checkbox" id="setup2"> <label for="setup2">Set up keyboard shortcuts</label><br>
+                    <input type="checkbox" id="setup3"> <label for="setup3">Explore the File Manager and create folders</label><br>
+                    <input type="checkbox" id="setup4"> <label for="setup4">Open Terminal and run basic commands</label><br>
+                    <input type="checkbox" id="setup5"> <label for="setup5">Test the Text Editor with sample content</label>
+                </div>
+                
+                <h2>💎 Advanced Features (15 minutes)</h2>
+                <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border-left: 4px solid #00fff7; margin: 1rem 0;">
+                    <input type="checkbox" id="adv1"> <label for="adv1">Set up KasWallet (if using crypto features)</label><br>
+                    <input type="checkbox" id="adv2"> <label for="adv2">Try the Dev Tools for coding</label><br>
+                    <input type="checkbox" id="adv3"> <label for="adv3">Create a simple app using the templates</label><br>
+                    <input type="checkbox" id="adv4"> <label for="adv4">Explore Kasia Messenger features</label><br>
+                    <input type="checkbox" id="adv5"> <label for="adv5">Test AI integration features</label>
+                </div>
+                
+                <h2>📚 Learning Resources</h2>
+                <ul>
+                    <li><a href="#keyboard-shortcuts" style="color: #00fff7;">📋 Master Keyboard Shortcuts</a></li>
+                    <li><a href="#app-development" style="color: #00fff7;">🏗️ Learn App Development</a></li>
+                    <li><a href="#troubleshooting" style="color: #00fff7;">🔧 Troubleshooting Guide</a></li>
+                    <li><a href="#api-reference" style="color: #00fff7;">📚 API Documentation</a></li>
+                </ul>
+            </section>
+
+            <section id="common-tasks">
+                <h1>🎯 Common Tasks</h1>
+                <p>Quick guides for everyday KasOS operations.</p>
+                
+                <h2>📁 File Operations</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border: 1px solid #00ff88;">
+                        <h3 style="color: #00ff88; margin-top: 0;">📂 Create New File/Folder</h3>
+                        <ol>
+                            <li>Open File Manager</li>
+                            <li>Right-click in empty space</li>
+                            <li>Select "New File" or "New Folder"</li>
+                            <li>Enter name and press Enter</li>
+                        </ol>
+                    </div>
+                    <div style="background: #1a093b; padding: 1rem; border-radius: 8px; border: 1px solid #00ff88;">
+                        <h3 style="color: #00ff88; margin-top: 0;">📤 Upload Files</h3>
+                        <ol>
+                            <li>Drag & drop files into File Manager</li>
+                            <li>Or click "Upload" button</li>
+                            <li>Select files from your computer</li>
+                            <li>Files appear in current directory</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>🪟 Window Management</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border: 1px solid #ff00cc;">
+                        <h3 style="color: #ff00cc; margin-top: 0;">🔄 Snap Windows</h3>
+                        <ol>
+                            <li>Drag window to screen edge</li>
+                            <li>Or use <kbd>Win + Arrow</kbd> keys</li>
+                            <li>Window snaps to half/quarter</li>
+                            <li>Drag away to unsnap</li>
+                        </ol>
+                    </div>
+                    <div style="background: #2d0b45; padding: 1rem; border-radius: 8px; border: 1px solid #ff00cc;">
+                        <h3 style="color: #ff00cc; margin-top: 0;">🗔 Minimize/Maximize</h3>
+                        <ol>
+                            <li>Click minimize (-) button</li>
+                            <li>Click maximize (□) button</li>
+                            <li>Double-click title bar</li>
+                            <li>Use <kbd>Alt + Space</kbd> menu</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>⚙️ Customization</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border: 1px solid #00fff7;">
+                        <h3 style="color: #00fff7; margin-top: 0;">🎨 Change Theme</h3>
+                        <ol>
+                            <li>Open Settings app</li>
+                            <li>Go to "Appearance" section</li>
+                            <li>Select theme from dropdown</li>
+                            <li>Adjust colors if needed</li>
+                        </ol>
+                    </div>
+                    <div style="background: #0a2d45; padding: 1rem; border-radius: 8px; border: 1px solid #00fff7;">
+                        <h3 style="color: #00fff7; margin-top: 0;">⌨️ Set Shortcuts</h3>
+                        <ol>
+                            <li>Open Settings app</li>
+                            <li>Go to "Keyboard" section</li>
+                            <li>Click on shortcut to edit</li>
+                            <li>Press new key combination</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <h2>💻 Development Tasks</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div style="background: #3d0545; padding: 1rem; border-radius: 8px; border: 1px solid #9d00ff;">
+                        <h3 style="color: #9d00ff; margin-top: 0;">🏗️ Create New App</h3>
+                        <ol>
+                            <li>Open Dev Tools</li>
+                            <li>Click "New Project"</li>
+                            <li>Choose template</li>
+                            <li>Edit code in built-in editor</li>
+                            <li>Test with preview</li>
+                        </ol>
+                    </div>
+                    <div style="background: #3d0545; padding: 1rem; border-radius: 8px; border: 1px solid #9d00ff;">
+                        <h3 style="color: #9d00ff; margin-top: 0;">🧪 Debug Application</h3>
+                        <ol>
+                            <li>Open Dev Tools</li>
+                            <li>Open Console tab</li>
+                            <li>Add breakpoints in code</li>
+                            <li>Use step debugging</li>
+                            <li>Check variable values</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <section id="code-templates">
+                <h1>📄 Code Templates</h1>
+                <p>Ready-to-use code snippets for rapid KasOS development.</p>
+                
+                <h2>🚀 Basic App Template</h2>
+                <pre><code class="language-javascript">// Basic KasOS Application Template
+class MyApp extends KasApp {
+    constructor(config) {
+        super(config);
+        this.title = 'My Application';
+        this.icon = '🚀';
+        this.width = 600;
+        this.height = 400;
+    }
+    
+    onInit() {
+        // App initialization code
+        console.log('App initialized');
+    }
+    
+    render() {
+        return `
+            &lt;div class="app-container"&gt;
+                &lt;h1&gt;Welcome to ${this.title}&lt;/h1&gt;
+                &lt;p&gt;Your app content goes here&lt;/p&gt;
+                &lt;button onclick="this.app.handleClick()"&gt;Click Me&lt;/button&gt;
+            &lt;/div&gt;
+        `;
+    }
+    
+    handleClick() {
+        this.showNotification('Button clicked!', 'success');
+    }
+    
+    onDestroy() {
+        // Cleanup code
+        console.log('App destroyed');
+    }
+}
+
+// Register the application
+kasOS.registerApp('my-app', MyApp);</code></pre>
+                
+                <h2>🎨 UI Component Template</h2>
+                <pre><code class="language-javascript">// Reusable UI Component
+class CustomButton extends KasComponent {
+    constructor(props) {
+        super(props);
+        this.type = props.type || 'primary';
+        this.text = props.text || 'Button';
+        this.onClick = props.onClick || (() => {});
+    }
+    
+    render() {
+        const className = `btn btn-${this.type}`;
+        return `
+            &lt;button class="${className}" onclick="this.handleClick()"&gt;
+                ${this.text}
+            &lt;/button&gt;
+        `;
+    }
+    
+    handleClick() {
+        this.onClick();
+    }
+}
+
+// Usage
+const button = new CustomButton({
+    type: 'success',
+    text: 'Save Changes',
+    onClick: () => console.log('Saved!')
+});</code></pre>
+                
+                <h2>💾 Data Storage Template</h2>
+                <pre><code class="language-javascript">// Local Storage Helper
+class DataManager {
+    constructor(appName) {
+        this.prefix = `kasos_${appName}_`;
+    }
+    
+    save(key, data) {
+        try {
+            localStorage.setItem(this.prefix + key, JSON.stringify(data));
+            return true;
+        } catch (error) {
+            console.error('Save failed:', error);
+            return false;
+        }
+    }
+    
+    load(key, defaultValue = null) {
+        try {
+            const data = localStorage.getItem(this.prefix + key);
+            return data ? JSON.parse(data) : defaultValue;
+        } catch (error) {
+            console.error('Load failed:', error);
+            return defaultValue;
+        }
+    }
+    
+    remove(key) {
+        localStorage.removeItem(this.prefix + key);
+    }
+    
+    clear() {
+        Object.keys(localStorage)
+            .filter(key => key.startsWith(this.prefix))
+            .forEach(key => localStorage.removeItem(key));
+    }
+}
+
+// Usage
+const data = new DataManager('my-app');
+data.save('settings', { theme: 'dark', language: 'en' });
+const settings = data.load('settings', {});</code></pre>
+                
+                <h2>🌐 API Integration Template</h2>
+                <pre><code class="language-javascript">// API Helper Class
+class APIClient {
+    constructor(baseURL) {
+        this.baseURL = baseURL;
+        this.headers = {
+            'Content-Type': 'application/json'
+        };
+    }
+    
+    async get(endpoint) {
+        try {
+            const response = await fetch(`${this.baseURL}${endpoint}`, {
+                method: 'GET',
+                headers: this.headers
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            return await response.json();
+        } catch (error) {
+            console.error('GET request failed:', error);
+            throw error;
+        }
+    }
+    
+    async post(endpoint, data) {
+        try {
+            const response = await fetch(`${this.baseURL}${endpoint}`, {
+                method: 'POST',
+                headers: this.headers,
+                body: JSON.stringify(data)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            return await response.json();
+        } catch (error) {
+            console.error('POST request failed:', error);
+            throw error;
+        }
+    }
+}
+
+// Usage
+const api = new APIClient('https://api.example.com');
+api.get('/users')
+   .then(users => console.log(users))
+   .catch(error => console.error(error));</code></pre>
+                
+                <h2>📧 Event System Template</h2>
+                <pre><code class="language-javascript">// Event-driven Component
+class EventDrivenApp extends KasApp {
+    constructor(config) {
+        super(config);
+        this.setupEventListeners();
+    }
+    
+    setupEventListeners() {
+        // Listen to system events
+        kasOS.events.on('theme-changed', this.onThemeChanged.bind(this));
+        kasOS.events.on('window-focus', this.onWindowFocus.bind(this));
+        
+        // Custom app events
+        this.on('data-updated', this.onDataUpdated.bind(this));
+        this.on('user-action', this.onUserAction.bind(this));
+    }
+    
+    onThemeChanged(theme) {
+        console.log('Theme changed to:', theme);
+        this.updateStyles(theme);
+    }
+    
+    onWindowFocus(focused) {
+        if (focused) {
+            this.refreshData();
+        }
+    }
+    
+    onDataUpdated(data) {
+        this.render();
+        this.showNotification('Data updated successfully');
+    }
+    
+    onUserAction(action) {
+        console.log('User performed action:', action);
+        this.trackAnalytics(action);
+    }
+    
+    // Emit custom events
+    emitDataUpdate(newData) {
+        this.emit('data-updated', newData);
+    }
+    
+    emitUserAction(actionType) {
+        this.emit('user-action', actionType);
+    }
+}</code></pre>
+                
+                <h2>🎮 Animation Template</h2>
+                <pre><code class="language-javascript">// Smooth Animations
+class AnimationHelper {
+    static fadeIn(element, duration = 300) {
+        element.style.opacity = '0';
+        element.style.display = 'block';
+        
+        return this.animate(element, { opacity: 1 }, duration);
+    }
+    
+    static fadeOut(element, duration = 300) {
+        return this.animate(element, { opacity: 0 }, duration)
+            .then(() => {
+                element.style.display = 'none';
+            });
+    }
+    
+    static slideIn(element, direction = 'left', duration = 300) {
+        const transform = direction === 'left' ? 'translateX(-100%)' : 'translateY(-100%)';
+        element.style.transform = transform;
+        
+        return this.animate(element, { transform: 'translate(0, 0)' }, duration);
+    }
+    
+    static animate(element, properties, duration) {
+        return new Promise((resolve) => {
+            const startTime = performance.now();
+            const startValues = {};
+            
+            // Get starting values
+            Object.keys(properties).forEach(prop => {
+                startValues[prop] = getComputedStyle(element)[prop];
+            });
+            
+            function step(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Easing function (ease-out)
+                const eased = 1 - Math.pow(1 - progress, 3);
+                
+                // Apply interpolated values
+                Object.keys(properties).forEach(prop => {
+                    const start = parseFloat(startValues[prop]) || 0;
+                    const end = parseFloat(properties[prop]);
+                    const current = start + (end - start) * eased;
+                    element.style[prop] = current + (prop.includes('opacity') ? '' : 'px');
+                });
+                
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    resolve();
+                }
+            }
+            
+            requestAnimationFrame(step);
+        });
+    }
+}
+
+// Usage
+AnimationHelper.fadeIn(document.getElementById('my-element'));
+AnimationHelper.slideIn(modal, 'top', 500);</code></pre>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <img src="logo.jpg" alt="KasOS Logo">
+            <span>&copy; 2025 KasOS Team</span>
+            <span>•</span>
+            <a href="https://github.com/kasos-io/kasos" target="_blank" rel="noopener">GitHub</a>
+            <span>•</span>
+            <a href="https://discord.gg/kasos" target="_blank" rel="noopener">Discord</a>
+            <span>•</span>
+            <a href="#support-faq">Support</a>
+        </div>
+        <div style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7;">
+            Documentation built with ❤️ by the KasOS community
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="assets/docs.js"></script>
+    <script>
+        // Initialize documentation features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add quick navigation toggle
+            const quickNavToggle = document.createElement('button');
+            quickNavToggle.innerHTML = '📑 Quick Nav';
+            quickNavToggle.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #00ff88, #00fff7);
+                color: #000;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-weight: bold;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+                transition: all 0.3s ease;
+            `;
+            quickNavToggle.onclick = () => {
+                const toc = document.getElementById('quick-toc');
+                toc.style.display = toc.style.display === 'none' ? 'block' : 'none';
+            };
+            document.body.appendChild(quickNavToggle);
+            
+            // Add back to top button
+            const backToTopBtn = document.createElement('button');
+            backToTopBtn.innerHTML = '↑';
+            backToTopBtn.title = 'Back to Top';
+            backToTopBtn.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #ff00cc;
+                color: #fff;
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 20px;
+                font-weight: bold;
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(255, 0, 204, 0.5);
+                transition: all 0.3s ease;
+                opacity: 0;
+                transform: translateY(100px);
+            `;
+            
+            backToTopBtn.onclick = () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            
+            document.body.appendChild(backToTopBtn);
+            
+            // Show/hide back to top button based on scroll position
+            let backToTopVisible = false;
+            window.addEventListener('scroll', () => {
+                const shouldShow = window.scrollY > 300;
+                if (shouldShow && !backToTopVisible) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.transform = 'translateY(0)';
+                    backToTopVisible = true;
+                } else if (!shouldShow && backToTopVisible) {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.transform = 'translateY(100px)';
+                    backToTopVisible = false;
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Add search functionality
+            const searchBox = document.createElement('div');
+            searchBox.innerHTML = `
+                <input type="text" id="doc-search" placeholder="🔍 Search documentation..." style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid rgba(0, 255, 136, 0.5);
+                    border-radius: 20px;
+                    background: rgba(0, 0, 0, 0.8);
+                    color: #00fff7;
+                    font-size: 14px;
+                    outline: none;
+                ">
+                <div id="search-results" style="
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.95);
+                    border: 1px solid rgba(0, 255, 136, 0.5);
+                    border-radius: 8px;
+                    max-height: 300px;
+                    overflow-y: auto;
+                    z-index: 1000;
+                "></div>
+            `;
+            searchBox.style.cssText = 'position: relative; margin-bottom: 1rem;';
+            
+            const content = document.querySelector('.content');
+            content.insertBefore(searchBox, content.firstChild);
+
+            // Simple search functionality
+            const searchInput = document.getElementById('doc-search');
+            const searchResults = document.getElementById('search-results');
+            
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+
+                const sections = document.querySelectorAll('h1, h2, h3');
+                const matches = [];
+                
+                sections.forEach(section => {
+                    if (section.textContent.toLowerCase().includes(query)) {
+                        matches.push({
+                            title: section.textContent,
+                            id: section.closest('section')?.id || '',
+                            level: section.tagName
+                        });
+                    }
+                });
+
+                if (matches.length > 0) {
+                    searchResults.innerHTML = matches.map(match => `
+                        <div style="padding: 8px; border-bottom: 1px solid rgba(0, 255, 136, 0.2); cursor: pointer;" 
+                             onclick="document.getElementById('${match.id}')?.scrollIntoView({behavior: 'smooth'}); document.getElementById('search-results').style.display='none';">
+                            <strong style="color: #00ff88;">${match.title}</strong>
+                            <small style="color: #666; display: block;">${match.level}</small>
+                        </div>
+                    `).join('');
+                    searchResults.style.display = 'block';
+                } else {
+                    searchResults.innerHTML = '<div style="padding: 8px; color: #666;">No results found</div>';
+                    searchResults.style.display = 'block';
+                }
+            });
+
+            // Hide search results when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!searchBox.contains(e.target)) {
+                    searchResults.style.display = 'none';
+                }
+            });
+
+            // Update build information if available
+            if (window.docsApp) {
+                window.docsApp.updateBuildInfo();
+            }
+            
+            // Add last updated timestamp
+            const footer = document.querySelector('footer');
+            if (footer) {
+                const lastUpdated = document.createElement('div');
+                lastUpdated.style.cssText = 'margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.7; text-align: center;';
+                lastUpdated.innerHTML = `Last updated: ${new Date().toLocaleDateString()}`;
+                footer.appendChild(lastUpdated);
+            }
+
+            // Highlight current section in sidebar
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -80% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all nav links
+                        document.querySelectorAll('.sidebar a').forEach(link => {
+                            link.style.color = '';
+                            link.style.fontWeight = '';
+                        });
+                        
+                        // Add active class to current section
+                        const activeLink = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+                        if (activeLink) {
+                            activeLink.style.color = '#00ff88';
+                            activeLink.style.fontWeight = 'bold';
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section[id]').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

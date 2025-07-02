@@ -1,0 +1,113 @@
+{
+  "name": "kasos-documentation",
+  "version": "1.2.1",
+  "description": "Official documentation for KasOS - A modern cyberpunk desktop environment",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/build-docs.js build",
+    "extract": "node scripts/build-docs.js extract",
+    "watch": "node scripts/build-docs.js watch",
+    "daily-update": "node scripts/daily-update.js",
+    "serve": "npx http-server . -p 3000 -c-1",
+    "dev": "npm run serve",
+    "validate": "npm run build && npm run lint",
+    "lint": "eslint assets/docs.js",
+    "format": "prettier --write \"**/*.{js,css,html,md}\"",
+    "test": "echo \"Documentation tests would go here\" && exit 0",
+    "deploy": "npm run build && npm run validate",
+    "stats": "node -e \"console.log('Documentation Statistics:'); const fs = require('fs'); const content = fs.readFileSync('index.html', 'utf8'); console.log('Total characters:', content.length); console.log('Estimated reading time:', Math.ceil(content.split(/\\s+/).length / 200), 'minutes');\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kasos-io/kasos.git",
+    "directory": "kas-io/documentation"
+  },
+  "keywords": [
+    "kasos",
+    "documentation",
+    "desktop-environment",
+    "cyberpunk",
+    "cryptocurrency",
+    "kaspa",
+    "web-desktop",
+    "open-source"
+  ],
+  "author": "KasOS Team",
+  "license": "MIT",
+  "homepage": "https://docs.kasos.io",
+  "bugs": {
+    "url": "https://github.com/kasos-io/kasos/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "http-server": "^14.1.1",
+    "chokidar": "^3.5.3",
+    "marked": "^11.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "files": [
+    "index.html",
+    "assets/",
+    "partials/",
+    "logo.jpg",
+    "favicon.ico",
+    "sitemap.xml"
+  ],
+  "config": {
+    "buildOutputDir": "dist",
+    "assetsDir": "assets",
+    "partialsDir": "partials"
+  },
+  "documentation": {
+    "sections": [
+      "introduction",
+      "getting-started",
+      "desktop-environment",
+      "window-management",
+      "application-system",
+      "keyboard-shortcuts",
+      "customization",
+      "troubleshooting",
+      "text-editor",
+      "dev-tools",
+      "terminal",
+      "file-manager",
+      "kaswallet",
+      "kasia-messenger",
+      "settings",
+      "app-development",
+      "api-reference",
+      "advanced-development",
+      "testing-debugging",
+      "deployment",
+      "security",
+      "architecture",
+      "crypto-integration",
+      "wasm-sandbox",
+      "ai-integration",
+      "performance",
+      "contributing",
+      "versions-releases",
+      "support"
+    ],
+    "lastUpdate": "2025-07-01",
+    "buildSystem": "custom",
+    "features": [
+      "modular-structure",
+      "daily-updates",
+      "search-functionality",
+      "responsive-design",
+      "cyberpunk-theme",
+      "code-highlighting",
+      "interactive-navigation"
+    ]
+  }
+}

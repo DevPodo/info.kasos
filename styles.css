@@ -1,0 +1,181 @@
+/* KasOS Documentation Styles - Kaspa Theme */
+:root {
+    --primary-color: #00e599; /* Kaspa green */
+    --sidebar-width: 260px;
+    --text-color: #fff;
+    --sidebar-bg: #111;
+    --header-height: 60px;
+    --content-bg: #181818;
+    --table-header-bg: #222;
+    --table-row-bg: #181818;
+    --table-border: #333;
+    --nav-active-bg: #00e59922;
+    --nav-active-border: #00e599;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--content-bg);
+}
+
+.documentation-container {
+    display: flex;
+    min-height: 100vh;
+    background: var(--content-bg);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    padding: 2rem 1.5rem;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 2px solid var(--primary-color);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.nav-items {
+    list-style: none;
+}
+
+.nav-items h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #aaa;
+    margin: 1.5rem 0 0.5rem;
+    letter-spacing: 1px;
+}
+
+.nav-items ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.nav-items a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.98rem;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-left: 3px solid transparent;
+    border-radius: 4px 0 0 4px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.nav-items a.active,
+.nav-items a:hover {
+    background: var(--nav-active-bg);
+    color: var(--primary-color);
+    border-left: 3px solid var(--nav-active-border);
+}
+
+/* Main Content Styles */
+.content {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 2.5rem 3rem 2rem 3rem;
+    max-width: 900px;
+    background: var(--content-bg);
+    min-height: 100vh;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    color: #fff;
+}
+
+p, li, ul {
+    color: #eee;
+}
+
+ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* Code Blocks */
+pre {
+    background: #222;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+    color: #fff;
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.97rem;
+    color: #00e599;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: var(--table-row-bg);
+}
+thead tr {
+    background: var(--table-header-bg);
+}
+th, td {
+    color: #fff;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--table-border);
+}
+tr:nth-child(even) {
+    background: #202020;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid var(--primary-color);
+    }
+    .content {
+        margin-left: 0;
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 1rem 0.5rem;
+    }
+    .sidebar {
+        padding: 1rem 0.5rem;
+    }
+}
